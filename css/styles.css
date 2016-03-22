@@ -24,3 +24,7 @@
     list-style-type: none;
     position: absolute;
 }
+
+#paintCanvas {
+    position: fixed;
+}
