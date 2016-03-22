@@ -1,0 +1,62 @@
+body{
+	max-width: 400px;
+	margin: auto;
+	font-family: Montserrat, Helvetica, Sans-Serif;
+}
+
+
+/*/////LINKS/////*/
+body a:visited{
+	color: black;
+}
+
+body a:hover{
+	opacity: .7;
+}
+
+body a {
+	color: grey;
+	text-decoration: none;
+	border-bottom: 1px solid black;
+}
+
+header{
+	text-align: center;
+	padding: 20px;
+
+}
+
+header nav a{
+	margin: 10px;
+	border-bottom: none;
+	font-size: 20px;
+}
+
+
+
+h1{
+	font-family: Lora, Georgia, Serif;
+	text-align: center;
+}
+
+h4{
+	font-family: Montserrat, Helvetica, Sans-Serif;
+	text-align: center;
+}
+
+h6{  /*footer*/
+	font-size: 12px;
+	line-height: 19px;
+}
+
+.button {
+    background-color: white;
+    border: solid black 1px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+
+    display: block;
+    margin: 10px;
+}
