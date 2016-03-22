@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+}
+
+#scroller {
+    position: relative;
+    height: 100%;
+    width: 550px;
+    margin: 0 auto;
+}
+#scroller .innerScrollArea {
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#scroller ul {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+#scroller li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: absolute;
+}
+
+#paintCanvas {
+    position: fixed;
+}
