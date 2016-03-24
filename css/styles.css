@@ -8,7 +8,7 @@ html, body {
     width: 550px;
     margin: 0 auto;
 }
-#scroller .innerScrollArea {
+#scroller .inner-scroll-area {
     overflow: hidden;
     position: absolute;
     height: 100%;
