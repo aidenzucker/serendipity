@@ -2,36 +2,14 @@ body{
 	max-width: 400px;
 	margin: auto;
 	font-family: Montserrat, Helvetica, Sans-Serif;
+	-webkit-font-smoothing: antialiased;
+	background-color: #E6E6E6;
+	background-image: url(img/learn.png);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    padding: 0px;
+    margin: 0px;
 }
-
-
-/*/////LINKS/////*/
-body a:visited{
-	color: black;
-}
-
-body a:hover{
-	opacity: .7;
-}
-
-body a {
-	color: grey;
-	text-decoration: none;
-	border-bottom: 1px solid black;
-}
-
-header{
-	text-align: center;
-	padding: 20px;
-
-}
-
-header nav a{
-	margin: 10px;
-	border-bottom: none;
-	font-size: 20px;
-}
-
 
 
 h1{
@@ -39,24 +17,149 @@ h1{
 	text-align: center;
 }
 
+
+/*///////////////////////////////////
+///////////////LINKS////////////////
+////////////////////////////////////*/
+
+
+body a:hover{
+	opacity: .7;
+}
+
+
+
+
+header{
+	text-align: center;
+	padding: 20px;
+	color: #1B53C2;
+}
+
+header nav a{
+	margin: 10px;
+	border-bottom: none;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+header a:visited{
+	color: #1B53C2;
+}	
+
+.gallerySlideshow{
+	text-align: center;
+	height: 38vh;
+	padding: 50px;
+}
+
+.gallerySlideshow img{
+	position: relative;
+	top: 0;
+	left: 0;
+	
+}
+
+#behind {
+    position: absolute;
+    top: 89px;
+    left: 13vw;
+    width: 60%;
+}    
+
+
+/*AN EDUCATIONAL TOOL FOR CULTIVATING THE ART OF SERENDIPITY*/
 h4{
 	font-family: Montserrat, Helvetica, Sans-Serif;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 20px;
+}
+
+
+
+.button {
+    font-family: Lora, Georgia, Serif;
+    font-size: 26px;
+    text-decoration: none;
+    text-align: center;
+
+    background-color: white;
+    border: solid #1B53C2 2px;
+    padding: 16px 32px;
+    
+    display: block;
+    margin: 10px;
+}
+
+
+footer{
+	padding: 10px;
 }
 
 h6{  /*footer*/
 	font-size: 12px;
 	line-height: 19px;
+	opacity: .5;
+	margin: 0;
 }
 
-.button {
-    background-color: white;
-    border: solid black 1px;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-
-    display: block;
-    margin: 10px;
+h6 a:visited{
+	color: black;
 }
+
+h6 a {
+	color: grey;
+	text-decoration: none;
+	border-bottom: 1px solid black;
+}
+
+
+
+/*////////////////////////////////////////
+///////////////   LEARN  ////////////////
+///////////////////////////////////////*/
+
+
+blockquote{
+	font-family: Lora, Georgia, Serif;
+	font-size: 20px;
+
+	text-indent: -0.5em; /*Hangs quote*/
+	padding: 0px;
+	margin: 0px;
+}
+
+.LearnMenu section{
+	display: inline-block;
+	border: 2px solid #B3B3B3;
+	width: 49vw;
+	text-align: center;
+
+}
+
+.TopMenuWhite{
+	background-color: white;
+	/*display: flex;*/
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	width: 100vw;
+	 -webkit-backface-visibility:hidden;
+
+	/*margin-top: 30px;*/
+}
+
+.ContentWrapper{
+	margin-top: 100px;
+}
+
+
+
+
+
+
