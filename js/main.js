@@ -51,7 +51,9 @@ var stick = function(el) {
 
 function render() {
     ctx.clearRect(0, 0, can.width, can.height);
-        ctx.fillStyle = "#E6E6E6";
+    ctx.fillStyle = "#E6E6E6";
+    ctx.fillRect(0, 0, can.width, can.height);
+
     for (var i in drawImages) {
         ctx.drawImage(drawImages[i].img, drawImages[i].left,
             drawImages[i].up, drawImages[i].width, drawImages[i].height);
