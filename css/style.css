@@ -23,25 +23,97 @@ h1{
 
 
 /*///////////////////////////////////
-///////////////MENU////////////////
+///////////////MENU/////////////////
 ////////////////////////////////////*/
 
-
-header{
+.StickyMenu{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	width: 100vw;
+	 -webkit-backface-visibility:hidden;
+	padding: 0;
 	text-align: center;
-	padding: 20px;
 }
 
-header nav a{
+#logo{
+	font-family: Lora, Georgia, Serif;
+	color: #B3B3B3;
+	font-size: 50px;
+	position: relative;
+	top: 10px;	
+}
+
+#underline{
+	border-bottom: 2px solid #1B53C2;
+	padding-bottom: 2px;
+}
+
+/*/////////////////////////////
+           TOP NAV     
+/////////////////////////////*/
+.TopNav {
+	color: #1B53C2;
+	padding-top: 22px;
+	padding-bottom: 30px;
+	vertical-align: middle;
+	background-color: white;
+}
+
+.TopNav a{
 	margin: 10px;
 	border-bottom: none;
 	font-size: 20px;
 	text-decoration: none;
+	color: #1B53C2;
 }
 
-header a:visited{
+/*/////////////////////////////
+          BOTTOM NAV     
+/////////////////////////////*/
+.BottomNav{
+	width: 100vw;
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+
+.BottomNav td{
+	border: 2px solid #B3B3B3;
+	background-color: white;
+	width: 50vw;
+	height: 29px;
+	/*padding: 18px;*/
+	padding-top: 17px;
+	padding-bottom: 13px;
+	color: #B3B3B3;
+}
+
+.BottomNav img{
+	height: 28px;
+}
+
+.BottomNav a {
+	width: 100%;
+	height: 100%;
+}
+
+.TableLink{
+	width: 100%;
+	height: 100%;
+}
+
+#blue{
 	color: #1B53C2;
-}	
+}
+
+.BottomNav td  {
+
+}
+
+/*///////////////////////////////////
+               HOME
+////////////////////////////////////*/
 
 .gallerySlideshow{
 	text-align: center;
@@ -74,8 +146,6 @@ h4{
 	font-weight: 700;
 	line-height: 20px;
 }
-
-
 
 .button {
     font-family: Lora, Georgia, Serif;
@@ -116,75 +186,13 @@ h6 a {
 
 
 /*////////////////////////////////////////
-///////////////   LEARN  ////////////////
+                  LEARN  
 ///////////////////////////////////////*/
-
-
-.LearnContainer{
-	width: 100vw;
-	border-collapse: collapse; 
-	border-spacing: 0;
-}
-
-.LearnContainer td{
-	border: 2px solid #B3B3B3;
-	width: 50vw;
-	padding: 18px;
-	color: #B3B3B3;
-}
-
-/*.LearnContainer section{
-	float: left;
-	display: inline-block;
-	border: 2px solid #B3B3B3;
-	width: 48vw;
-	text-align: center;
-}*/
-
-.TopMenuWhite{
-	background-color: white;
-
-	/*display: flex;*/
-	position: fixed;
-	top:0;
-	left:0;
-	right:0;
-	width: 100vw;
-	 -webkit-backface-visibility:hidden;
-	 padding: 0;
-
-	/*margin-top: 30px;*/
-}
-
-.TopMenuWhite nav{
-	color: #1B53C2;
-	padding-top: 22px;
-	padding-bottom: 30px;
-	vertical-align: middle;
-}
-
-#logo{
-	font-family: Lora, Georgia, Serif;
-	color: #B3B3B3;
-	font-size: 50px;
-	position: relative;
-	top: 10px;	
-}
-
-#underline{
-	border-bottom: 2px solid #1B53C2;
-	padding-bottom: 2px;
-}
-
-#blue{
-	color: #1B53C2;
-}
 
 .ContentWrapper{
 	margin-top: 42vh;
 	padding: 30px;
 }
-
 
 blockquote{
 	font-family: Lora, Georgia, Serif;
@@ -225,5 +233,14 @@ blockquote img{
 	margin: auto;
 	margin-top: 10px;
 }
+
+/*////////////////////////////////////////
+///////////////   JUXTAGRAPH  ////////////
+///////////////////////////////////////*/
+
+
+
+
+
 
 
