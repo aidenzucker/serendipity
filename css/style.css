@@ -249,6 +249,57 @@ blockquote img{
 ///////////////////////////////////////*/
 
 
+/*/////////////////////////////
+          EXPORT PANEL    
+/////////////////////////////*/
+
+.export-panel{
+	position: fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	width: 100vw;
+	 -webkit-backface-visibility:hidden;
+	padding: 0;
+	
+	background-color: white;
+	border-top: 2px solid #B3B3B3;
+}
+
+.export-panel a, .export-panel div{
+	/*display: block;*/
+}
+
+.share-panel{
+	padding: 20px;
+}
+
+.export-button{
+	padding: 20px;
+	width: 100vw;
+	height: 50px;
+	display: block;
+
+	background-color: #1B53C2;
+	color: white;
+	font-family: Montserrat, Helvetica, Sans-Serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 17px;
+	/*line-height: 22px;*/
+	/*vertical-align: text-top;*/
+}
+
+#export-button{
+	
+}
+
+
+
+
+
+
+
+
 
 
 
