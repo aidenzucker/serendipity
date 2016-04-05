@@ -97,12 +97,15 @@ h1{
 .BottomNav a {
 	width: 100%;
 	height: 100%;
+	text-decoration: none;
+	color: inherit;
 }
 
 .TableLink{
 	width: 100%;
 	height: 100%;
 }
+
 
 #blue{
 	color: #1B53C2;
@@ -118,7 +121,8 @@ h1{
 
 .gallerySlideshow{
 	text-align: center;
-	height: 38vh;
+	margin-top: 150px;
+	height: 200px;
 	padding: 50px;
 }
 
@@ -131,8 +135,8 @@ h1{
 
 #behind {
     position: absolute;
-    top: 89px;
-    left: 13vw;
+    top: 145px;
+    left: 65px;
     width: 60%;
 }    
 
