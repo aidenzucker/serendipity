@@ -1,11 +1,11 @@
 body{
-	max-width: 400px;
-	margin: auto;
+	/*max-width: 400px;*/
+	/*margin: auto;*/
 	font-family: Montserrat, Helvetica, Sans-Serif;
 	-webkit-font-smoothing: antialiased;
 	background-color: #E6E6E6;
 	/*background-image: url(../img/learn.png);*/
-    background-size: 100vw;
+    /*background-size: 100vw;*/
     background-repeat: no-repeat;
     padding: 0px;
     margin: 0px;
@@ -62,7 +62,7 @@ h1{
 }
 
 .TopNav a{
-	margin: 10px;
+	margin: 18px;
 	border-bottom: none;
 	font-size: 20px;
 	text-decoration: none;
@@ -119,10 +119,17 @@ h1{
                HOME
 ////////////////////////////////////*/
 
+.centered-wrapper{
+	/*display: inline-block;*/
+	margin: 0 auto;
+	max-width: 375px;
+	text-align: center;
+}
+
 .gallerySlideshow{
 	text-align: center;
-	margin-top: 150px;
-	height: 200px;
+	margin-top: 165px;
+	height: 183px;
 	padding: 50px;
 }
 
@@ -130,14 +137,12 @@ h1{
 	position: relative;
 	top: 0;
 	left: 0;
-	
+	margin: auto;
 }
 
 #behind {
-    position: absolute;
-    top: 145px;
-    left: 65px;
-    width: 60%;
+    margin-top: -291px;
+    width: 230px;
 }    
 
 
