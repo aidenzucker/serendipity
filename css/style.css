@@ -211,7 +211,8 @@ blockquote{
 	text-indent: -0.5em; /*Hangs quote*/
 	padding: 0px;
 	margin: 0px;
-	/*-webkit-margin-end: 0px;*/
+
+	max-width: 330px;
 }
 
 .source{
@@ -234,7 +235,7 @@ blockquote img{
 	display: block;
 	text-align: center;
 	position: relative;
-	top: -50px;
+	top: -77px;
 }
 
 .scroll-hint img{
@@ -248,9 +249,33 @@ blockquote img{
 ///////////////   JUXTAGRAPH  ////////////
 ///////////////////////////////////////*/
 
-/*#scroller{
-	margin: 0 auto;
-}*/
+.jux-intro{
+	margin-top: 48vh;
+	text-align: center;
+}
+
+.jux-intro p{
+	margin-top: 5px;
+}
+
+.jux-intro h4{
+	margin: 0;
+}
+
+.jux-scroll-hint{
+	display: block;
+	text-align: center;
+	margin-top: 220px;
+	margin-bottom: 100px;
+}
+
+.jux-scroll-hint img{
+	width: 20px;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
+
 
 
 /*/////////////////////////////
@@ -258,6 +283,8 @@ blockquote img{
 /////////////////////////////*/
 
 .export-panel{
+	/*display: none;*/
+
 	position: fixed;
 	bottom:0;
 	left:0;
@@ -270,14 +297,28 @@ blockquote img{
 	border-top: 2px solid #B3B3B3;
 }
 
+.export-panel a {
+	text-decoration: none;
+}
+
 .share-panel{
-	padding: 20px;
+	padding: 22px;
+	padding-left: 43px;
+	color: #999999;
+	font-size: 20px;
+}
+
+.share-panel img{
+	height: 23px;
+	margin-left: 46px;
+	margin-bottom: -4px;
+
 }
 
 .export-button{
 	padding: 20px;
 	width: 100vw;
-	height: 50px;
+	height: 22px;
 	display: block;
 
 	background-color: #1B53C2;
@@ -285,15 +326,21 @@ blockquote img{
 	font-family: Montserrat, Helvetica, Sans-Serif;
 	-webkit-font-smoothing: antialiased;
 	font-size: 17px;
-	/*text-align: center;*/
+	text-align: center;
 	/*line-height: 22px;*/
 	/*vertical-align: text-top;*/
 }
 
 .button-label{
-	margin: 0 auto;
-	width: auto;
+	margin-right: 30px;
+	margin-top: 1px;
 	/*display: inline-block;*/
+
+}
+
+.button-label img {
+	height: 12px;
+	margin-left: 10px;
 }
 
 
