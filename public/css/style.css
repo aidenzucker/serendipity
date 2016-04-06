@@ -264,6 +264,7 @@ blockquote img{
 #placeholder-image {
 	width: 90vw;
 	margin: auto;
+	margin-left: -22px;
 }
 
 #steps-button{
