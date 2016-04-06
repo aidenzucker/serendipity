@@ -11,7 +11,7 @@ var headTemplate=`
 
   <script type="text/javascript" src="js/vendor/hammer.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  // <link rel="stylesheet" type="text/css" href="css/style.css">
   `;
 
   //Puts this in the headER of every page:
