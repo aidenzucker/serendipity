@@ -7,8 +7,6 @@
   <link rel='stylesheet prefetch' href='http://bradfrost.github.com/this-is-responsive/styles.css'>
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <script type="text/javascript" src="CanImage.js"></script>
 
 </head>
 
@@ -42,60 +40,36 @@
     <!--Pattern HTML from Brad Frost-->
   <div class="gallery">
     <ul class="gallery-list">
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
-      <li><a href="#"><img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Product Name" /></a></li>
     </ul>
   </div>
   <!--End Pattern HTML-->
-  
-  
-
-    <!-- <div class="gallery">
-      <ul class="gallery">
-           
-            <li class="scroll-img"><img src="img/image0.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image1.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image2.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image3.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image4.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image5.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image6.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image7.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image8.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image9.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image10.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image11.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image12.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image13.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image14.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image15.png" width="300px" /></li>
-            <li class="scroll-img"><img src="img/image16.png" width="300px" /></li>
-        </ul>
-    </div> -->
-
 
 </body>
+  <script>
+    var temp = "<li><a href='#'><img class='gal-img' src=''/></a></li>";
+
+    function getImage(i) {
+        var newImage = $(temp);
+        newImage.find('img').attr("src", '/images/' + i);
+
+        $('.gallery-list').append(newImage);
+    }
+
+    $.ajax({
+        url: '/count',
+        type: 'GET',
+        success: function (data) {
+            console.log('success: ' + JSON.stringify(data));
+            for (var i = 0; i < data.count; i++) {
+                getImage(i);
+            }
+        },
+         error: function (error) {
+            console.log('fail: ' + data);
+        }
+    });
+
+  </script>
 
     <!-- Needed on every page: -->
   <script type="text/javascript" src="js/templates.js"></script>

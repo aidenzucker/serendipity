@@ -43,3 +43,15 @@ app.put('/upload', function (req, res) {
         }
     });
 });
+
+app.get("/count", function (req, res) {
+    var count = imgCounter > 4 ? imgCounter : 4;
+
+    res.json({ count: count });
+});
+
+app.get("/images/:id", function (req, res) {
+    var path = __dirname + '/public/img/gallery/img' + req.params.id + '.png';
+
+    res.sendFile(path);
+});

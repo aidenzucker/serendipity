@@ -348,7 +348,13 @@ blockquote img{
           GALLERY     
 /////////////////////////////*/
 
+.gallery {
+    position: fixed;
+    top: 189px;
+}
+
 .gallery-list {
+
   		padding: 0.2em;
 			overflow: hidden;
 		}
