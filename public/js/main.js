@@ -34,8 +34,13 @@ function init() {
         });
     });
 
+    // Dynamic listeners
     $(document).on('click', '.jux-back', function() {
         removeImage();
+    });
+
+    $(document).on('click', '.export', function() {
+        exportCan();
     });
 
     setInterval(render, 60);
@@ -60,6 +65,8 @@ var stick = function(el) {
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
                 $(".description").show();
+                $('.export-panel').show();
+
                 $('.BottomNav').html("<a class='jux-back'>Back</a>");
             }
         }
@@ -106,15 +113,29 @@ function removeImage(i) {
     if (drawImages.length < 2) {
         $(".image-list").css("visibility", "visible");
         $(".description").hide()
+        $('.export-panel').hide();
+
         $(".BottomNav").html(botNav);
     }
 }
 
 function exportCan() {
-    var dataURL = can.toDataURL('image/png');
-    document.write('<img src="'+dataURL+'"/>');
+    return $.ajax({
+        url: '/upload',
+        type: 'PUT',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({data: can.toDataURL('image/png')}),
+        success: function (data) {
+                window.location.href = '/gallery.html';
+                return data;
+            },
+         error: function (error) {
+                window.location.href = '/gallery.html';
+                return "Error!";
+            }
+    });
 }
-
 
 // Disable pull down to refresh:
 // http://stackoverflow.com/questions/29008194

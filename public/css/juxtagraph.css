@@ -23,3 +23,7 @@ html, body {
     height: 45px;
     z-index: 100;
 }
+
+.export-panel {
+    display: none;
+}
