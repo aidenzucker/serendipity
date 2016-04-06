@@ -11,6 +11,12 @@ body{
     margin: 0px;*/
 }
 
+a:-webkit-any-link {
+    /*color: #1B53C2;*/
+    text-decoration: none;
+    cursor: auto;
+}
+
 body a:hover{
 	opacity: .7;
 }
@@ -126,6 +132,10 @@ h1{
 	text-align: center;
 }
 
+.centered-wrapper a {
+	color: #1B53C2;
+}
+
 .gallerySlideshow{
 	text-align: center;
 	margin-top: 165px;
@@ -202,6 +212,11 @@ h6 a {
 .ContentWrapper{
 	margin-top: 42vh;
 	padding: 30px;
+	text-align: center;
+}
+
+.ContentWrapper a{
+	  color: #1B53C2;
 }
 
 blockquote{
@@ -236,6 +251,7 @@ blockquote img{
 	text-align: center;
 	position: relative;
 	top: -77px;
+	z-index: -1;
 }
 
 .scroll-hint img{
@@ -244,6 +260,18 @@ blockquote img{
 	margin: auto;
 	margin-top: 10px;
 }
+
+#placeholder-image {
+	width: 90vw;
+	margin: auto;
+}
+
+#steps-button{
+	font-size: 20px;
+	padding: 19px;
+}
+
+
 
 /*////////////////////////////////////////
 ///////////////   JUXTAGRAPH  ////////////
