@@ -1,7 +1,7 @@
 @font-face {
 font-family: Montserrat-Light;
 font-weight: 200;
-src: url("fonts/Montserrat-Light.otf") format("opentype");
+src: url("../fonts/Montserrat-Light.otf") format("opentype");
 }
 
 body{
@@ -84,7 +84,7 @@ h1{
 	font-size: 50px;
 	position: relative;
 	top: 10px;
-	left: -20px;
+	/*left: -20px;*/
 }
 
 #underline{
