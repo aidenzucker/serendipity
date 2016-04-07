@@ -112,7 +112,7 @@ h1{
 
 	color: #B3B3B3;
 
-	border: 2px solid #B3B3B3;
+	border: 1px solid #B3B3B3;
 	background-color: #F2F2F2;
 	width: 50vw;
 	height: 29px;
@@ -310,7 +310,103 @@ blockquote{
 
 
 
+/*/////////////////////////////
+          	CLOSEUP     
+/////////////////////////////*/
 
+.GalleryNav{
+	width: 100vw;
+	border-collapse: collapse; 
+	border-spacing: 0;
+	border-top: 1px solid #B3B3B3;
+	border-bottom: 1px solid #B3B3B3;
+}
+
+.GalleryNav td{
+	font-size: 13px;
+	font-weight: 700;
+
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+	color: #B3B3B3;
+
+	background-color: white;
+	width: 50vw;
+	height: 29px;
+	/*padding: 18px;*/
+	padding-top: 10px;
+	padding-bottom: 8px;
+	
+	
+}
+
+.GalleryNav img{
+	height: 28px;
+}
+
+.GalleryNav a {
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
+}
+
+.TableLink{
+	width: 100%;
+	height: 100%;
+}
+
+.closeup-arrow img{
+	height: 22px;
+}
+
+.closeup-info-panel{
+    position: fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width: 100vw;
+     -webkit-backface-visibility:hidden;
+    padding: 0;
+    
+    background-color: white;
+    border-top: 1px solid #B3B3B3;
+}
+
+.closeup-info-panel a {
+    text-decoration: none;
+}
+
+.caption{
+	font-size: 15px;
+	line-height: 21px;
+
+	padding: 25px;
+	padding-top: 17px;
+	padding-bottom: 16px;
+
+	border-bottom: 1px solid #B3B3B3;
+	border-collapse: collapse;
+
+	/*Eventually I'll need to define the height here.*/
+}
+
+
+/*This effects both on export screen and closeup screen*/
+.share-panel{
+    padding: 22px;
+    padding-left: 43px;
+    color: #999999;
+    font-size: 20px;
+}
+
+.share-panel img{
+    height: 23px;
+    margin-left: 46px;
+    margin-bottom: -4px;
+
+}
 
 /*/////////////////////////////
           GALLERY     
