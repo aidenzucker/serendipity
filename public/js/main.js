@@ -35,7 +35,7 @@ function init() {
     });
 
     // Dynamic listeners
-    $(document).on('click', '.jux-back', function() {
+    $(document).on('click', '.jux-back-button', function() {
         removeImage();
     });
 
@@ -65,9 +65,9 @@ var stick = function(el) {
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
                 $(".BottomNav").css("display", "none");
-                $(".back-button").show();
+                $(".jux-back-button").show();
                 $(".description").show();
-                $('.export-panel').show();
+                $(".export-panel").show();
 
                 // $('.BottomNav').html("<a class='jux-back'>Back</a>");
             }
@@ -116,6 +116,7 @@ function removeImage(i) {
         $(".image-list").css("visibility", "visible");
         $(".description").hide()
         $('.export-panel').hide();
+        $('.jux-back-button').hide();
 
         $(".BottomNav").html(botNav);
     }
