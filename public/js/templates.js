@@ -1,4 +1,4 @@
-// Puts this in the head of every page:
+// Puts this in the head of every page...put this on every page at the end because the pages will load faster
 var headTemplate=`
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,7 +11,7 @@ var headTemplate=`
 
   <script type="text/javascript" src="js/vendor/hammer.min.js"></script>
 
-  // <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   `;
 
   //Puts this in the headER of every page:

@@ -15,6 +15,7 @@ html, body {
 
 .image-list {
     list-style-type: none;
+    text-align: center;
 }
 
 .description {
