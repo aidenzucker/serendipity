@@ -101,7 +101,10 @@ html, body {
     border-right: none;
     border-top-color: #B3B3B3;
     border-bottom-color: #B3B3B3;
-    /*display: block;*/
+    
+  -webkit-border-radius: 0; /*To prevent corner rounding on mobile*/
+
+
     display: none;
 }
 
