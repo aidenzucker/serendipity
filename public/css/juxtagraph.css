@@ -70,6 +70,7 @@ html, body {
     border-top: 1px solid #B3B3B3;
     display: block;
     display: none;
+    margin: 0px;
 }
 
 .jux-back-button img{
@@ -103,7 +104,7 @@ html, body {
     border-bottom-color: #B3B3B3;
     -webkit-appearance: none; /*To prevent inner shadow*/
     -webkit-border-radius: 0; /*To prevent corner rounding on mobile*/
-
+    margin: 0px;
 
     display: none;
 }
