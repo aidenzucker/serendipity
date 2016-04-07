@@ -64,10 +64,12 @@ var stick = function(el) {
             drawImages.push(newImage);
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
+                $(".BottomNav").css("display", "none");
+                $(".back-button").show();
                 $(".description").show();
                 $('.export-panel').show();
 
-                $('.BottomNav').html("<a class='jux-back'>Back</a>");
+                // $('.BottomNav').html("<a class='jux-back'>Back</a>");
             }
         }
     };
