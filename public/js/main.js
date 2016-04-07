@@ -9,7 +9,7 @@ var botNav;
 
 $(function(){
     xImage.onload = function() { init(); };
-    xImage.src = "img/x.png";
+    xImage.src = "img/buttons/x.png";
     botNav = $('.BottomNav').children().clone();
 });
 
