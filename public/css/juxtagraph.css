@@ -4,9 +4,14 @@ html, body {
 
 #paintCanvas {
     position: fixed;
-    top: 181px;
+    top: 126px;
     left: 0px;
     z-index: -1;
+    border: 2px solid blue;
+}
+
+.jux-back{
+    height: 20px;
 }
 
 .scroll-img {
