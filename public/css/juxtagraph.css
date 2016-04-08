@@ -29,7 +29,7 @@ html, body {
 ///////////////////////////////////////*/
 
 .jux-intro{
-    margin-top: 48vh;
+    padding-top: 48vh;
     text-align: center;
 }
 
@@ -39,6 +39,19 @@ html, body {
 
 .jux-intro h4{
     margin: 0;
+}
+
+.instructions{
+    max-width: 269px;
+    margin: auto;
+}
+
+.instructions ol{
+    padding-left: 15px;
+}
+
+.instructions li{
+    margin-bottom: 14px;
 }
 
 .jux-scroll-hint{
@@ -133,19 +146,6 @@ html, body {
     text-decoration: none;
 }
 
-.share-panel{
-    padding: 22px;
-    padding-left: 43px;
-    color: #999999;
-    font-size: 20px;
-}
-
-.share-panel img{
-    height: 23px;
-    margin-left: 46px;
-    margin-bottom: -4px;
-
-}
 
 .export-button{
     padding: 20px;

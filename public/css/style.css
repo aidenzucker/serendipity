@@ -17,6 +17,11 @@ body{
     margin: 0px;*/
 }
 
+strong{
+	font-family: Montserrat, Helvetica, Sans-Serif;
+	font-weight: 700;
+}
+
 a:-webkit-any-link {
     /*color: #1B53C2;*/
     text-decoration: none;
