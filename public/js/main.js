@@ -167,17 +167,17 @@ function getCursorPosition(event) {
 
 //Disable scroll to top on textarea focus
 //http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-input.onfocus = function () {
-        window.scrollTo(0, 0);
-        document.body.scrollTop = 0;
-    }
-//tested this and it doesn't work on chrome or safari
+// input.onfocus = function () {
+//         window.scrollTo(0, 0);
+//         document.body.scrollTop = 0;
+//     }
+// //tested this and it doesn't work on chrome or safari
 
 
-//attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-jQuery('body').bind('focusin focus', function(e){
-  e.preventDefault();
-})
+// //attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
+// jQuery('body').bind('focusin focus', function(e){
+//   e.preventDefault();
+// })
 //tested this and it doesn't work on chrome or safari
 
 
