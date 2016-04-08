@@ -148,7 +148,7 @@ target.addEventListener('touchmove', function(e){
     var scrolly = target.pageYOffset || target.scrollTop || 0;
     var direction = e.changedTouches[0].pageY > last_y ? 1 : -1;
     // if(direction>0 && scrolly===0){
-    //     e.preventDefault();
+    //     e.preventDefault();    This code was preventing scrolling on load.
     // }
     last_y = e.changedTouches[0].pageY;
 });
