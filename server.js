@@ -41,12 +41,11 @@ function parseDataURL(body) {
 app.put('/upload', function (req, res) {
     var upload = parseDataURL(req.body.data);
     if (maxImgIndex == null) {
-        maxImgIndex = 0;
-    } else {
-        maxImgIndex++;
+        maxImgIndex = -1;
     }
+    maxImgIndex++;
 
-    var savePath = path.join(__dirname, 'gallery/' + maxImgIndex + '.png');
+    var savePath = path.join(__dirname, 'gallery/img' + maxImgIndex + '.png');
 
     fs.writeFile(savePath, upload.data, function(err) {
         if (err) {
