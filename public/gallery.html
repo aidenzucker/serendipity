@@ -60,11 +60,12 @@
 
 </body>
   <script>
-    var temp = "<li><a href='#'><img class='gal-img' src=''/></a></li>";
+    var temp = "<li><a><img class='gal-img' src=''/></a></li>";
 
     function getImage(i) {
         var newImage = $(temp);
         newImage.find('img').attr("src", '/images/' + i);
+        newImage.find('a').attr("href", '/detail' + i);
 
         $('.gallery-list').append(newImage);
     }

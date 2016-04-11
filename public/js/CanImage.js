@@ -6,5 +6,5 @@ var canImage = function(img, left, up, width, height) {
     this.width = width;
     this.height = height;
 
-    this.size = 50;
+    this.size = 40;
 }

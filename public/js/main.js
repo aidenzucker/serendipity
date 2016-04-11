@@ -128,7 +128,10 @@ function exportCan() {
         type: 'PUT',
         contentType: 'application/json',
         dataType: 'json',
-        data: JSON.stringify({data: can.toDataURL('image/png')}),
+        data: JSON.stringify({
+            data: can.toDataURL('image/png'),
+            commentary: $('.description').val(),
+        }),
         success: function (data) {
                 window.location.href = '/gallery.html';
                 return data;
@@ -139,19 +142,6 @@ function exportCan() {
             }
     });
 }
-
-// Disable pull down to refresh:
-// http://stackoverflow.com/questions/29008194
-var target = window; // this can be any scrollable element
-var last_y = 0;
-target.addEventListener('touchmove', function(e){
-    var scrolly = target.pageYOffset || target.scrollTop || 0;
-    var direction = e.changedTouches[0].pageY > last_y ? 1 : -1;
-    // if(direction>0 && scrolly===0){
-    //     e.preventDefault();    This code was preventing scrolling on load.
-    // }
-    last_y = e.changedTouches[0].pageY;
-});
 
 function getCursorPosition(event) {
     var rect = can.getBoundingClientRect();

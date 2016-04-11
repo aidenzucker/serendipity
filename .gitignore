@@ -1,3 +1,4 @@
 
 node_modules/*
-public/img/gallery/*
+gallery/*
+db.json
