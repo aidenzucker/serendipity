@@ -2,6 +2,9 @@ var path    = require('path')
   , express = require('express')
   , fs      = require('fs')
   , bodyParser = require('body-parser')
+  , Datastore = require('nedb');
+
+db = new Datastore({ filename: 'db.json', autoload: true });
 
 var app = express();
 
@@ -26,26 +29,30 @@ app.listen(PORT, function() {
     });
 });
 
-function parseDataURL(body) {
-    var match = /data:([^;]+);base64,(.*)/.exec(body);
-    if(!match) {
-        return null;
-    }
-
-    return {
-        contentType: match[1],
-        data: new Buffer(match[2], 'base64')
-    };
-}
-
 app.put('/upload', function (req, res) {
-    var upload = parseDataURL(req.body.data);
     if (maxImgIndex == null) {
         maxImgIndex = -1;
     }
     maxImgIndex++;
 
+    // Enter text data (hypothetically, should enforce this finishing before
+    //  we send response but ¯\_(ツ)_/¯)
+    var entry = {
+        commentary: req.body.commentary,
+        imgIndex: maxImgIndex,
+        time: new Date()
+    };
+    db.insert(entry, function(err, newEntry) {
+        if (err) {
+            console.log("DB ERROR: " + err);
+        } else {
+        }
+    });
+
+    // Save image
+    var upload = parseDataURL(req.body.data);
     var savePath = path.join(__dirname, 'gallery/img' + maxImgIndex + '.png');
+
 
     fs.writeFile(savePath, upload.data, function(err) {
         if (err) {
@@ -66,3 +73,26 @@ app.get("/images/:id", function (req, res) {
 
     res.sendFile(path);
 });
+
+app.get("/information/:id", function (req, res) {
+    db.find({ "imgIndex": parseInt(req.params.id) }, function(err, entry) {
+        if (err) {
+            console.log("DB Find error: " + err);
+        } else {
+            res.json(entry);
+        }
+    });
+});
+
+function parseDataURL(body) {
+    var match = /data:([^;]+);base64,(.*)/.exec(body);
+    if(!match) {
+        return null;
+    }
+
+    return {
+        contentType: match[1],
+        data: new Buffer(match[2], 'base64')
+    };
+}
+
