@@ -1,21 +1,30 @@
-var path    = require('path');
-var express = require('express');
-var fs      = require('fs');
-var bodyParser = require('body-parser')
+var path    = require('path')
+  , express = require('express')
+  , fs      = require('fs')
+  , bodyParser = require('body-parser')
 
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({limit: '50mb'}));
 
-
 var PORT = 8000;
+var fileNumRE = /\d+/;
+var maxImgIndex;
 
 app.listen(PORT, function() {
     console.log('listening ' + PORT);
+    fs.readdir(__dirname + '/gallery/', function(err, files) {
+        console.log(files);
+        files.forEach(function(f) {
+            var val = parseInt(f.match(fileNumRE));
+            console.log('val: ' + val);
+            if (val > maxImgIndex || maxImgIndex == null) {
+                maxImgIndex = val;
+            }
+        });
+    });
 });
-
-var imgCounter = 0;
 
 function parseDataURL(body) {
     var match = /data:([^;]+);base64,(.*)/.exec(body);
@@ -31,8 +40,13 @@ function parseDataURL(body) {
 
 app.put('/upload', function (req, res) {
     var upload = parseDataURL(req.body.data);
-    var savePath = path.join(__dirname, 'public/img/gallery/img' + imgCounter + '.png');
-    imgCounter++;
+    if (maxImgIndex == null) {
+        maxImgIndex = 0;
+    } else {
+        maxImgIndex++;
+    }
+
+    var savePath = path.join(__dirname, 'gallery/' + maxImgIndex + '.png');
 
     fs.writeFile(savePath, upload.data, function(err) {
         if (err) {
@@ -45,13 +59,11 @@ app.put('/upload', function (req, res) {
 });
 
 app.get("/count", function (req, res) {
-    var count = imgCounter > 4 ? imgCounter : 4;
-
-    res.json({ count: count });
+    res.json({ count: maxImgIndex });
 });
 
 app.get("/images/:id", function (req, res) {
-    var path = __dirname + '/public/img/gallery/img' + req.params.id + '.png';
+    var path = __dirname + '/gallery/img' + req.params.id + '.png';
 
     res.sendFile(path);
 });
