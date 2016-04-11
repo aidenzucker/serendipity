@@ -92,7 +92,8 @@ app.get("/detail:id", function (req, res) {
             console.log("DB Find error: " + err);
         } else {
             res.render("detail", {
-                description: entry[0].commentary
+                description: entry[0].commentary,
+                imageURL: "/images/" + req.params.id
             });
         }
     });
