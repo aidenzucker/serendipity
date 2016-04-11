@@ -7,10 +7,39 @@ var xImage = new Image();
 
 var botNav;
 
+
+var scrollImgs = [
+    '<li class="scroll-img"><img src="img/image0.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image1.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image2.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image3.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image4.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image5.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image6.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image7.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image8.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image9.png"/></li> ',
+    '<li class="scroll-img"><img src="img/image10.png"/></li>',
+    '<li class="scroll-img"><img src="img/image11.png"/></li>',
+    '<li class="scroll-img"><img src="img/image12.png"/></li>',
+    '<li class="scroll-img"><img src="img/image13.png"/></li>',
+    '<li class="scroll-img"><img src="img/image14.png"/></li>',
+    '<li class="scroll-img"><img src="img/image15.png"/></li>',
+    '<li class="scroll-img"><img src="img/image16.png"/></li>'
+];
+for (var i = 0; i < scrollImgs.length; i++) {
+    var toSwap = Math.floor(Math.random() * scrollImgs.length);
+    temp = scrollImgs[i];
+    scrollImgs[i] = scrollImgs[toSwap];
+    scrollImgs[toSwap] = temp;
+}
+
+
 $(function(){
     xImage.onload = function() { init(); };
     xImage.src = "img/buttons/x.png";
     botNav = $('.BottomNav').children().clone();
+    $('.image-list').html(scrollImgs.join(' '));
 });
 
 function init() {
