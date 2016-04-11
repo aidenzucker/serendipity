@@ -1,5 +1,6 @@
 var path    = require('path')
   , express = require('express')
+  , exphbs  = require('express-handlebars')
   , fs      = require('fs')
   , bodyParser = require('body-parser')
   , Datastore = require('nedb');
@@ -11,6 +12,9 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({limit: '50mb'}));
 
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 var PORT = 8000;
 var fileNumRE = /\d+/;
 var maxImgIndex;
@@ -18,10 +22,8 @@ var maxImgIndex;
 app.listen(PORT, function() {
     console.log('listening ' + PORT);
     fs.readdir(__dirname + '/gallery/', function(err, files) {
-        console.log(files);
         files.forEach(function(f) {
             var val = parseInt(f.match(fileNumRE));
-            console.log('val: ' + val);
             if (val > maxImgIndex || maxImgIndex == null) {
                 maxImgIndex = val;
             }
@@ -80,6 +82,18 @@ app.get("/information/:id", function (req, res) {
             console.log("DB Find error: " + err);
         } else {
             res.json(entry);
+        }
+    });
+});
+
+app.get("/detail:id", function (req, res) {
+    db.find({ "imgIndex": parseInt(req.params.id) }, function(err, entry) {
+        if (err) {
+            console.log("DB Find error: " + err);
+        } else {
+            res.render("detail", {
+                description: entry[0].commentary
+            });
         }
     });
 });
