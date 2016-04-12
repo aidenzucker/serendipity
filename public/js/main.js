@@ -1,7 +1,9 @@
 var can, ctx;
 
 var drawImages = [];
-var verticalOffset = 181;
+var topVertOffset = 198;
+var botVertOffset = 120;
+var leftOff = 10;
 
 var xImage = new Image();
 
@@ -75,8 +77,16 @@ $(function(){
 function init() {
     can = document.getElementById('paintCanvas');
     ctx = can.getContext('2d');
-    can.width = window.innerWidth;
-    can.height = window.innerHeight - verticalOffset;
+    if (window.innerWidth > 1000) {
+        botVertOffset = 50;
+        can.width = window.innerHeight - (topVertOffset + botVertOffset);
+        can.height = window.innerHeight - (topVertOffset + botVertOffset);
+    } else {
+        can.width = 0.9 * window.innerWidth;
+        can.height = 0.9 *  window.innerWidth;
+    }
+    leftOff = (window.innerWidth - can.width) / 2;
+    $(can).css("left", leftOff);
 
     $('#scroller').click(function(e) {
         var mousePos = getCursorPosition(e);
@@ -118,7 +128,7 @@ var stick = function(el) {
         });
 
         if (!dupImage) {
-            var newImage = new canImage(imgload, dims.left, dims.top - verticalOffset,
+            var newImage = new canImage(imgload, dims.left - leftOff, dims.top - topVertOffset,
                 dims.width, dims.height);
             drawImages.push(newImage);
             if (drawImages.length >= 2) {

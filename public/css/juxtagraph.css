@@ -13,7 +13,6 @@ canvas{
 #paintCanvas {
     position: fixed;
     top: 198px;
-    left: 0px;
     z-index: -1;
     border: 2px solid white;
     
