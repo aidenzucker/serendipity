@@ -13,15 +13,17 @@ canvas{
 #paintCanvas {
     position: fixed;
     top: 198px;
-    left: 0px;
+    /*left: 0px;*/
     z-index: -1;
     border: 2px solid white;
     
-    /*width: 90vw;    This breaks the canvas
-    height: 90vw;*/
+    /*This breaks the canvas*/
+  /*  width: 90vw;    
+    height: 90vw;
 
-    /*margin: 5% auto;*/ /*// Will not center vertically and won't work in IE6/7.*/
-    /*left: 0;
+    // Will not center vertically and won't work in IE6/7.
+    margin: 5% auto; 
+    left: 0;
     right: 0;*/
 }
 
