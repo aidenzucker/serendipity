@@ -87,16 +87,39 @@ app.get("/information/:id", function (req, res) {
 });
 
 app.get("/detail/:id", function (req, res) {
-    db.find({ "imgIndex": parseInt(req.params.id) }, function(err, entry) {
+    var id = parseInt(req.params.id);
+    if (id < 0 || id > maxImgIndex || id == null) {
+        res.status(404).send('Invalid ID');
+        return;
+    }
+
+    db.find({ "imgIndex": parseInt(id) }, function(err, entry) {
         if (err) {
             console.log("DB Find error: " + err);
         } else {
+            var nextIndex = id + 1;
+            if (id >= maxImgIndex) {
+                nextIndex = 0;
+            }
+
+            var prevIndex = id - 1;
+            if (id <= 0) {
+                prevIndex = maxImgIndex;
+            }
+
             res.render("detail", {
                 description: entry[0].commentary,
-                imageURL: "/images/" + req.params.id
+                imageURL: "/images/" + id,
+                nextURL: "/detail/" + nextIndex,
+                prevURL: "/detail/" + prevIndex
             });
         }
     });
+});
+
+// WARNING: No routes beyond this point
+app.get('*', function(req, res){
+    res.status(404).send('Invalid Page');
 });
 
 function parseDataURL(body) {
