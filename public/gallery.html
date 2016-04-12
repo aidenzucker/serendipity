@@ -65,9 +65,9 @@
     function getImage(i) {
         var newImage = $(temp);
         newImage.find('img').attr("src", '/images/' + i);
-        newImage.find('a').attr("href", '/detail' + i);
+        newImage.find('a').attr("href", '/detail/' + i);
 
-        $('.gallery-list').append(newImage);
+        $('.gallery-list').prepend(newImage);
     }
 
     $.ajax({

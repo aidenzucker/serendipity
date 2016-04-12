@@ -86,7 +86,7 @@ app.get("/information/:id", function (req, res) {
     });
 });
 
-app.get("/detail:id", function (req, res) {
+app.get("/detail/:id", function (req, res) {
     db.find({ "imgIndex": parseInt(req.params.id) }, function(err, entry) {
         if (err) {
             console.log("DB Find error: " + err);
