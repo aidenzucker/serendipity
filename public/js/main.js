@@ -133,12 +133,10 @@ var stick = function(el) {
             drawImages.push(newImage);
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
-                $(".BottomNav").css("display", "none");
+                $(".BottomNav").hide();
                 $(".jux-back-button").show();
                 $(".description").show();
                 $(".export-panel").show();
-
-                // $('.BottomNav').html("<a class='jux-back'>Back</a>");
             }
         }
     };
@@ -187,7 +185,7 @@ function removeImage(i) {
         $('.export-panel').hide();
         $('.jux-back-button').hide();
 
-        $(".BottomNav").html(botNav);
+        $(".BottomNav").show();
     }
 }
 
@@ -218,25 +216,3 @@ function getCursorPosition(event) {
     var y = event.clientY - rect.top;
     return {x: x, y: y};
 }
-
-//ZE'EV: these could work and just be poorly implimented
-//(like the first one does the opposite that we want i think)
-//(and the second one is just wrong syntax i think)
-
-
-//Disable scroll to top on textarea focus
-//http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-// input.onfocus = function () {
-//         window.scrollTo(0, 0);
-//         document.body.scrollTop = 0;
-//     }
-// //tested this and it doesn't work on chrome or safari
-
-
-// //attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-// jQuery('body').bind('focusin focus', function(e){
-//   e.preventDefault();
-// })
-//tested this and it doesn't work on chrome or safari
-
-
