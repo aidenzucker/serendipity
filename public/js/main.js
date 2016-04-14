@@ -113,6 +113,12 @@ function init() {
     });
 
     setInterval(render, 60);
+
+    $('.description').bind('focusin focus', function(e){
+      e.preventDefault();
+    })
+
+    $('.TopNav').css({'background-color': '#' + (Math.random().toString(16) + "000000").substring(2,8)});
 }
 
 var stick = function(el) {
@@ -232,11 +238,7 @@ function getCursorPosition(event) {
 
 
 // //attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-$('.description').bind('focusin focus', function(e){
-  e.preventDefault();
-})
 
-$('.TopNav').css({'background-color': '#' + (Math.random().toString(16) + "000000").substring(2,8)});
 //tested this and it doesn't work on chrome or safari
 
 
