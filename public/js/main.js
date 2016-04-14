@@ -232,9 +232,9 @@ function getCursorPosition(event) {
 
 
 // //attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-$('.description').bind('focusin focus', function(e){
-  e.preventDefault();
-})
+// $('.description').bind('focusin focus', function(e){
+//   e.preventDefault();
+// })
 //tested this and it doesn't work on chrome or safari
 
 
