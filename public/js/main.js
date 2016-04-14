@@ -235,6 +235,8 @@ function getCursorPosition(event) {
 $('.description').bind('focusin focus', function(e){
   e.preventDefault();
 })
+
+$('.TopNav').css({'background-color': '#' + (Math.random().toString(16) + "000000").substring(2,8)});
 //tested this and it doesn't work on chrome or safari
 
 
