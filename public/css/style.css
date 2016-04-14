@@ -17,6 +17,10 @@ body{
     margin: 0px;*/
 }
 
+p{
+
+}
+
 strong{
 	font-family: Montserrat, Helvetica, Sans-Serif;
 	font-weight: 700;
@@ -109,6 +113,7 @@ h1{
 }
 
 .BottomNav td{
+	font-family: Montserrat, Helvetica, Sans-Serif;
 	font-size: 13px;
 	font-weight: 700;
 
@@ -215,6 +220,13 @@ h4{
     margin: 10px;
 }
 
+.button:active{
+	background-color: #1B53C2;
+	border: solid white 2px;
+	color: white;
+	opacity: 1;
+}
+
 
 footer{
 	padding: 10px;
@@ -244,6 +256,7 @@ h6 a {
 /*////////////////////////////////////////
                   LEARN  
 ///////////////////////////////////////*/
+
 
 .ContentWrapper{
 	/*margin-top: 42vh;*/
@@ -317,6 +330,30 @@ blockquote{
 	font-size: 20px;
 	padding: 19px;
 }
+
+
+/*////////////////////////////////////////
+              DEFINITION  
+///////////////////////////////////////*/
+
+.steps-container{
+	text-align: left;
+}
+
+.picasso{
+	margin-top: 50px;
+}
+
+.picasso img{
+	width: 25%;
+}
+
+
+#blue{
+	margin-left: -20px;
+	padding-left: 0px;
+}
+
 
 
 
