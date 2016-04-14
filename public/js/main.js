@@ -133,12 +133,10 @@ var stick = function(el) {
             drawImages.push(newImage);
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
-                $(".BottomNav").css("display", "none");
+                $(".BottomNav").hide();
                 $(".jux-back-button").show();
                 $(".description").show();
                 $(".export-panel").show();
-
-                // $('.BottomNav').html("<a class='jux-back'>Back</a>");
             }
         }
     };
@@ -187,7 +185,7 @@ function removeImage(i) {
         $('.export-panel').hide();
         $('.jux-back-button').hide();
 
-        $(".BottomNav").html(botNav);
+        $(".BottomNav").show();
     }
 }
 
@@ -218,6 +216,7 @@ function getCursorPosition(event) {
     var y = event.clientY - rect.top;
     return {x: x, y: y};
 }
+<<<<<<< HEAD
 
 //ZE'EV: these could work and just be poorly implimented
 //(like the first one does the opposite that we want i think)
@@ -240,3 +239,5 @@ $('body').bind('focusin focus', function(e){
 //tested this and it doesn't work on chrome or safari
 
 
+=======
+>>>>>>> 8e3ed90f1fcaab20886af007b67f68583c505c2e

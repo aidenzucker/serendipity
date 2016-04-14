@@ -110,8 +110,8 @@ app.get("/detail/:id", function (req, res) {
             res.render("detail", {
                 description: entry[0].commentary,
                 imageURL: "/images/" + id,
-                nextURL: "/detail/" + nextIndex,
-                prevURL: "/detail/" + prevIndex
+                nextURL: "/detail/" + prevIndex,
+                prevURL: "/detail/" + nextIndex
             });
         }
     });
