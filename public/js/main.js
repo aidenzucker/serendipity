@@ -118,7 +118,8 @@ function init() {
       e.preventDefault();
     })
 
-    $('.TopNav').css({'background-color': '#' + (Math.random().toString(16) + "000000").substring(2,8)});
+    // Dan's random color changer
+    // $('.TopNav').css({'background-color': '#' + (Math.random().toString(16) + "000000").substring(2,8)});
 }
 
 var stick = function(el) {
