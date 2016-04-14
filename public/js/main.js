@@ -216,7 +216,6 @@ function getCursorPosition(event) {
     var y = event.clientY - rect.top;
     return {x: x, y: y};
 }
-<<<<<<< HEAD
 
 //ZE'EV: these could work and just be poorly implimented
 //(like the first one does the opposite that we want i think)
@@ -233,11 +232,9 @@ function getCursorPosition(event) {
 
 
 // //attempt #2 from http://stackoverflow.com/questions/6740253/disable-scrolling-when-changing-focus-form-elements-ipad-web-app
-$('body').bind('focusin focus', function(e){
+$('.description').bind('focusin focus', function(e){
   e.preventDefault();
 })
 //tested this and it doesn't work on chrome or safari
 
 
-=======
->>>>>>> 8e3ed90f1fcaab20886af007b67f68583c505c2e
