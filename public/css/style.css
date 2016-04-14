@@ -17,6 +17,10 @@ body{
     margin: 0px;*/
 }
 
+img{
+	max-width: 100vw;
+}
+
 p{
 
 }
@@ -342,6 +346,7 @@ blockquote{
 
 .picasso{
 	margin-top: 50px;
+	border: 1px solid blue;
 }
 
 .picasso img{

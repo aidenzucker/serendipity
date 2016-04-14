@@ -18,12 +18,12 @@
 
     $(window).on('scroll', function () {
         var scrollPos = $(window).scrollTop();
-        if (scrollPos > bottomParallax + menuHeight) {
+        if (scrollPos > bottomParallax ) {
             //Put divs in final position, do this individually on all of them
             $('#blue').css({'padding-left': blueDistance + 'px'});
             $('#bottom-curve').css({'padding-left': bottomCurveDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
-            //calculatePos(scrollPos, topParallax, bottomParallax);            
+            calculatePos(scrollPos, topParallax, bottomParallax);            
         }
 
     });
