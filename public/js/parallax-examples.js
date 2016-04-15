@@ -12,14 +12,16 @@
 
     var menuHeight = $('.StickyMenu').height();
 
-    function calculatePos (currentScrollPosition, topParallaxDiv, bottomParallaxDiv) {
+    function calculatePos (currentScrollPosition, topParallaxDiv, bottomParallaxDiv, whichOne) {
         //Total distance moved by certain div
 
 
         var percentScrolled = (currentScrollPosition + $(window).height() - topParallaxDiv) / ($(window).height() + 2 * (bottomParallaxDiv - topParallaxDiv));
 
-        $('#img-xray').css({'padding-left': (percentScrolled * imgXrayDistance) + 'px'});
-        $('#img-waves').css({'padding-right': (percentScrolled * imgWavesDistance) + 'px'});
+        if (whichOne === 'x-ray') {
+            $('#img-xray').css({'padding-left': (percentScrolled * imgXrayDistance) + 'px'});
+            $('#img-waves').css({'padding-right': (percentScrolled * imgWavesDistance) + 'px'});
+        }
 
         $('#img-sticky-notes').css({'padding-left': (percentScrolled * imgStickyNotesDistance) + 'px'});
         $('#img-squares').css({'padding-right': (percentScrolled * imgSquaresDistance) + 'px'});
@@ -45,7 +47,7 @@
             $('#img-xray').css({'padding-left': imgXrayDistance + 'px'});
             $('#img-waves').css({'padding-right': imgWavesDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
-            calculatePos(scrollPos, topParallax, bottomParallax);            
+            calculatePos(scrollPos, topParallax, bottomParallax, 'x-ray');            
         }
 
     });
