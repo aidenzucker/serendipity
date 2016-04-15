@@ -843,11 +843,13 @@ figcaption{
     padding-left: 43px;
     color: #999999;
     font-size: 20px;
+
+    text-align: center;
 }
 
 .share-panel img{
     height: 23px;
-    margin-left: 46px;
+    margin-left: 35px;
     margin-bottom: -4px;
 
 }

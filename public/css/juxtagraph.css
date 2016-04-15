@@ -23,7 +23,7 @@ html, body {
 
 #paintCanvas {
     position: fixed;
-    top: 184px;
+    top: 154px;
     z-index: -1;
     border: 2px solid white;
 }
@@ -132,11 +132,14 @@ html, body {
 }
 
 .jux-back-button{
+    color: #B3B3B3;
+
+
     background-color: white;
     padding: 22px;
     padding-left: 0px;
     padding-right: 0px;
-    text-align: left;
+    text-align: center;
     /* font-family: Montserrat, Helvetica, Sans-Serif; */
     font-size: 20px;
     border-right: 1px solid #B3B3B3;
@@ -211,18 +214,39 @@ html, body {
     bottom:0;
     left:0;
     right:0;
-    width: 100vw;
+    width: 100%;
      -webkit-backface-visibility:hidden;
     padding: 0;
     
     background-color: white;
     border-top: 1px solid #B3B3B3;
+
+    text-align: center;
 }
 
 .export-panel a {
     text-decoration: none;
 }
 
+.share-panel-wrapper{
+    width: 100%;
+
+    /*border: 1px solid red;*/
+}
+
+
+.share-panel{
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /*border: 1px solid blue;*/
+
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
 
 .export-button{
     padding: 17px;
