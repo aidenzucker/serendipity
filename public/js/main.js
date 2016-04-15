@@ -11,7 +11,7 @@ var botNav;
 
 var resizeable = false;
 var isDragging = false;
-var startDrag, resizeFactor = 0;
+var startDrag;
 
 // Make big array of imgs, randomize them
 var scrollImageLast = 46;
@@ -70,7 +70,8 @@ function init() {
         if (isDragging && resizeable) {
             var diffX = startDrag.pageX - e.pageX;
             var diffY = startDrag.pageY - e.pageY;
-            resizeFactor = Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
+            drawImages[drawImages.length - 1].resizeFactor =
+                Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
         }
     });
    $('#scroller').mouseup(function() {
@@ -81,7 +82,8 @@ function init() {
         enable: true
     });
     hammertime.on('pinch', function(ev) {
-        resizeFactor = (((ev.scale - .5) / 2.5) - .5) * 600;
+        drawImages[drawImages.length - 1].resizeFactor =
+            (((ev.scale - .5) / 2.5) - .5) * 600;
     });
 
     var imageList = $('.image-list');
@@ -135,7 +137,6 @@ var stick = function(el) {
 
                 $('#scroller').addClass('resizeable-drag');
                 resizeable = true;
-                resizeFactor = 0;
             }
         }
     };
@@ -148,15 +149,9 @@ function render() {
     ctx.fillRect(0, 0, can.width, can.height);
 
     for (var i = 0; i < drawImages.length; i++) {
-        // Both images being drawn, resize
-        if (i == 1) {
-            ctx.drawImage(drawImages[i].img, drawImages[i].left - (resizeFactor / 2),
-                drawImages[i].up - (resizeFactor / 2), drawImages[i].width + resizeFactor,
-                drawImages[i].height + resizeFactor);
-        } else {
-            ctx.drawImage(drawImages[i].img, drawImages[i].left,
-                drawImages[i].up, drawImages[i].width, drawImages[i].height);
-        }
+        ctx.drawImage(drawImages[i].img, drawImages[i].left - (drawImages[i].resizeFactor / 2),
+            drawImages[i].up - (drawImages[i].resizeFactor / 2), drawImages[i].width + drawImages[i].resizeFactor,
+            drawImages[i].height + drawImages[i].resizeFactor);
 
 
         // Draw X if only one img
