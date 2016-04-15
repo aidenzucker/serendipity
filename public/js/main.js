@@ -45,10 +45,15 @@ function init() {
         can.width = 0.9 * window.innerWidth;
         can.height = 0.9 *  window.innerWidth;
     }
-    $('#scroller').css('width', can.width);
+    // makes scroller same width as canvas
+    // $('#scroller').css('width', can.width);
 
     leftOff = (window.innerWidth - can.width) / 2;
     $(can).css("left", leftOff);
+
+    $('.reorder-button').click(function() {
+        drawImages.reverse();
+    });
 
     $('#scroller').click(function(e) {
         var mousePos = getCursorPosition(e);
