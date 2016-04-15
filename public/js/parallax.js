@@ -1,6 +1,10 @@
     /* TOP OF DAN CODE */
-    var blueDistance = $(window).width() * .6,
-        bottomCurveDistance = $(window).width() * .6;
+    var blueDistance = $(window).width(),
+        bottomCurveDistance = $(window).width() * .6,
+        portraitDistance = $(window).width(),
+        drawingDistance = $(window).width()
+        
+        ;
 
     var menuHeight = $('.StickyMenu').height();
 
@@ -12,10 +16,12 @@
         
         $('#blue').css({'padding-left': (percentScrolled * blueDistance) + 'px'});
         $('#bottom-curve').css({'padding-left': (percentScrolled * bottomCurveDistance) + 'px'});
+        $('#drawing').css({'padding-right': (percentScrolled * drawingDistance) + 'px'});
+        $('#portrait').css({'padding-left': (percentScrolled * portraitDistance) + 'px'});
     };
 
 
-
+    /* PICASSO */
     $(window).on('scroll', function () {
 
         var topParallax = $('.picasso').offset().top,
@@ -30,8 +36,27 @@
         } else if (scrollPos > topParallax - $(window).height()) {
             calculatePos(scrollPos, topParallax, bottomParallax);            
         }
-
     });
+
+
+    /* FULLER */
+    $(window).on('scroll', function () {
+
+        var topParallax = $('.fuller').offset().top,
+            bottomParallax = topParallax + $('.fuller').height();
+
+        var scrollPos = $(window).scrollTop();
+
+        if (scrollPos > bottomParallax ) {
+            //Put divs in final position, do this individually on all of them
+            $('#drawing').css({'padding-right': drawingDistance + 'px'});
+            $('#portrait').css({'padding-left': portraitDistance + 'px'});
+        } else if (scrollPos > topParallax - $(window).height()) {
+            calculatePos(scrollPos, topParallax, bottomParallax);            
+        }
+    });
+
+
 
     /* BOTTOM OF DAN CODE */
 

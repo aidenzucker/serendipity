@@ -305,6 +305,10 @@ h4{
 	right: 0;
 }
 
+.button a{
+	border: solid #1B53C2
+}
+
 .button:active{
 	background-color: #1B53C2;
 	border: solid white 2px;
@@ -571,25 +575,41 @@ figcaption{
 	/*width: 50vw;*/
 }
 
-#drawing{
+/*DOESN'T WORK*/
+/*#drawing{
 	float: right;
-    /*margin-left: -200px;*/
     margin-top: 8px;
     margin-right: -200px;
     width: 101%;
-    /* position: absolute; */
 }
 
 #portrait{
-	/* float: right; */
     margin-left: -178px;
     margin-bottom: -49vh;
-    /* margin-right: -50px; */
-    /* margin-left: -100px; */
     width: 78%;
     position: absolute;
     margin-top: 50px;
+}*/
+
+#portrait{
+	float: left;
+	margin-left: -100px;
+	margin-top: 39px;
+
+	width: 50%;
+	
+	position: absolute;
 }
+#drawing{
+	float: right;
+
+	margin-top: 30px;
+	margin-right: -50px;
+	margin-left: -100px;
+
+	width: 245px;
+}
+
 
 
 
