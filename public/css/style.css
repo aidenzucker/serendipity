@@ -240,27 +240,35 @@ h2{
 	color: #1B53C2;
 }
 
+/*iphone 6 and desktop*/
 .gallerySlideshow{
 	text-align: center;
-	margin-top: -69px;
-	/*height: 183px;*/
+	margin-top: 46px;
+	vertical-align: middle;
+	height: 183px;
 	/*padding: 50px;*/
 }
 
 .gallerySlideshow img{
 	margin-right: 400px;
-	width: 20vh;
+
+	transform: scale(0.5, 0.5);
+	-ms-transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
 }
 
-@media screen and (max-width: 415px) {
-	.frame{
-		width: 98.5%;
+/*iphone 5*/
+@media screen and (max-width: 374px) {
+	.gallerySlideshow{
+		margin-top: -100px;
 	}
 }
 
 #marquee-right {
 	display: absolute;
-	margin-bottom: -428px;  
+	margin-bottom: -432px;
+	/*-webkit-marquee-speed: fast;*/
+
 }
 
 #marquee-left {
