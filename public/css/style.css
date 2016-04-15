@@ -249,6 +249,13 @@ h2{
 
 .gallerySlideshow img{
 	margin-right: 400px;
+	width: 20vh;
+}
+
+@media screen and (max-width: 415px) {
+	.frame{
+		width: 98.5%;
+	}
 }
 
 #marquee-right {
