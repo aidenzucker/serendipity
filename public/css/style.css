@@ -4,6 +4,10 @@ font-weight: 200;
 src: url("../fonts/Montserrat-Light.otf") format("opentype");
 }
 
+html{
+	    overflow-x: hidden;
+}
+
 body{
 	/*max-width: 400px;*/
 	/*margin: auto;*/
@@ -506,9 +510,13 @@ blockquote{
 	display: inline-block;
 }
 
+.step{
+	margin-bottom: 100px;
+}
+
 .picasso{
 	margin-top: 50px;
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 }
 
 .picasso img{
@@ -533,7 +541,57 @@ figcaption{
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	opacity: .5;
+
+	margin-top: 20px;
 }
+
+.eye{
+	/*border: 1px solid blue;*/
+
+	padding-top: 50px;
+	/*padding-bottom: 50px;*/
+
+	-webkit-box-align:center;
+    -webkit-box-pack:center;
+    display:-webkit-box;
+}
+
+.fuller{
+	border: 1px solid blue;
+	height: 50vh;
+}
+
+.eye img{
+	width: 95vw;
+	position: relative;
+	left: -43px;
+}	
+
+.fuller img{
+	/*width: 50vw;*/
+}
+
+#drawing{
+	float: right;
+    /*margin-left: -200px;*/
+    margin-top: 8px;
+    margin-right: -200px;
+    width: 101%;
+    /* position: absolute; */
+}
+
+#portrait{
+	/* float: right; */
+    margin-left: -178px;
+    margin-bottom: -49vh;
+    /* margin-right: -50px; */
+    /* margin-left: -100px; */
+    width: 78%;
+    position: absolute;
+    margin-top: 50px;
+}
+
+
 
 /*////////////////////////////////////////
               EXAMPLES  
