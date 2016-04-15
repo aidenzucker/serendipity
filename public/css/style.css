@@ -243,10 +243,11 @@ h2{
 /*iphone 6 and desktop*/
 .gallerySlideshow{
 	text-align: center;
-	margin-top: 46px;
+	margin-top: -61px;
 	vertical-align: middle;
 	height: 183px;
 	/*padding: 50px;*/
+	position: relative;
 }
 
 .gallerySlideshow img{
@@ -255,12 +256,19 @@ h2{
 	transform: scale(0.5, 0.5);
 	-ms-transform: scale(0.5, 0.5);
 	-webkit-transform: scale(0.5, 0.5);
+
+	/*border: 1px solid blue;*/
+
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
 }
 
 /*iphone 5*/
 @media screen and (max-width: 374px) {
 	.gallerySlideshow{
-		margin-top: -100px;
+		margin-top: -117px;
 	}
 }
 
@@ -269,14 +277,31 @@ h2{
 	margin-bottom: -432px;
 	/*-webkit-marquee-speed: fast;*/
 
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+
+	vertical-align: middle;
+
+	/*border: 2px solid red;*/
+
 }
 
 #marquee-left {
-   
+	
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+
+	vertical-align: middle;
+
+	/*border: 1px solid blue;*/
 }
 
 .intro-text{
-	max-width: 320px;
+	max-width: 340px;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -316,8 +341,8 @@ h4{
     margin: 10px;
     max-width: 300px;
 
-    margin-left: auto;
-	margin-right: auto;
+    margin-left: 20px;
+	margin-right: 20px;
 	left: 0;
 	right: 0;
 }
