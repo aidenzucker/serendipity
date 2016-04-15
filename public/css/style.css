@@ -18,10 +18,10 @@ body{
     background-color: #E6E6E6;
     z-index: -2;
 }
-
+/*
 img{
 	max-width: 100vw;
-}
+}*/
 
 p{
 	font-size: 17px;
@@ -601,7 +601,7 @@ figcaption{
 	margin-top: 88px;
 
 	width: 50%;
-	
+	position: absolute;
 }
 #img-squares{
 	float: right;
@@ -616,6 +616,7 @@ figcaption{
 #img-velcro{
 	float: left;
 	width: 200px;
+	position: absolute;
 }
 
 #img-loops{
@@ -627,6 +628,7 @@ figcaption{
 #img-petri{
 	float: left;
 	width: 200px;
+	position: absolute;
 }
 
 #img-circles{
@@ -638,7 +640,7 @@ figcaption{
 
 .card{
 	display: inline-block;
-	z-index: 20;
+	/*z-index: 2;*/
 	position: relative;
 }
 

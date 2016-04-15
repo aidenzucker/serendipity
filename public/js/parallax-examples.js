@@ -1,9 +1,13 @@
     /* TOP OF DAN CODE */
     var imgXrayDistance = $(window).width(),
-        imgWavesDistance = $(window).width();
-        // imgStickyNotesDistance = $(window).width(),
-        // imgSquaresDistance = $(window).width(),
-        
+        imgWavesDistance = $(window).width(),
+        imgStickyNotesDistance = $(window).width(),
+        imgSquaresDistance = $(window).width()
+        imgVelcroDistance = $(window).width(),
+        imgLoopsDistance = $(window).width(),
+        imgPetriDistance = $(window).width(),
+        imgCirclesDistance = $(window).width()
+        ;
 
 
     var menuHeight = $('.StickyMenu').height();
@@ -16,6 +20,15 @@
 
         $('#img-xray').css({'padding-left': (percentScrolled * imgXrayDistance) + 'px'});
         $('#img-waves').css({'padding-right': (percentScrolled * imgWavesDistance) + 'px'});
+
+        $('#img-sticky-notes').css({'padding-left': (percentScrolled * imgStickyNotesDistance) + 'px'});
+        $('#img-squares').css({'padding-right': (percentScrolled * imgSquaresDistance) + 'px'});
+
+        $('#img-velcro').css({'padding-left': (percentScrolled * imgVelcroDistance) + 'px'});
+        $('#img-loops').css({'padding-right': (percentScrolled * imgLoopsDistance) + 'px'});
+
+        $('#img-petri').css({'padding-left': (percentScrolled * imgPetriDistance) + 'px'});
+        $('#img-circles').css({'padding-right': (percentScrolled * imgCirclesDistance) + 'px'});
     };
 
 
@@ -47,8 +60,44 @@
 
         if (scrollPos > bottomParallax ) {
             //Put divs in final position, do this individually on all of them
-            $('#img-sticky-notes').css({'padding-left': imgXrayDistance + 'px'});
-            $('#img-squares').css({'padding-right': imgWavesDistance + 'px'});
+            $('#img-sticky-notes').css({'padding-left': imgStickyNotesDistance + 'px'});
+            $('#img-squares').css({'padding-right': imgSquaresDistance + 'px'});
+        } else if (scrollPos > topParallax - $(window).height()) {
+            calculatePos(scrollPos, topParallax, bottomParallax);            
+        }
+
+    });
+
+    //3 VELCRO
+    $(window).on('scroll', function () {
+
+        var topParallax = $('#velcro').offset().top,
+            bottomParallax = topParallax + $('#velcro').height();
+
+        var scrollPos = $(window).scrollTop();
+
+        if (scrollPos > bottomParallax ) {
+            //Put divs in final position, do this individually on all of them
+            $('#img-velcro').css({'padding-left': imgVelcroDistance + 'px'});
+            $('#img-loops').css({'padding-right': imgLoopsDistance + 'px'});
+        } else if (scrollPos > topParallax - $(window).height()) {
+            calculatePos(scrollPos, topParallax, bottomParallax);            
+        }
+
+    });
+
+     //4 PETRI
+    $(window).on('scroll', function () {
+
+        var topParallax = $('#penicillin').offset().top,
+            bottomParallax = topParallax + $('#penicillin').height();
+
+        var scrollPos = $(window).scrollTop();
+
+        if (scrollPos > bottomParallax ) {
+            //Put divs in final position, do this individually on all of them
+            $('#img-petri').css({'padding-left': imgPetriDistance + 'px'});
+            $('#img-circles').css({'padding-right': imgCirclesDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
             calculatePos(scrollPos, topParallax, bottomParallax);            
         }
