@@ -23,14 +23,20 @@
             $('#img-waves').css({'padding-right': (percentScrolled * imgWavesDistance) + 'px'});
         }
 
+        if (whichOne === 'sticky-notes') {
         $('#img-sticky-notes').css({'padding-left': (percentScrolled * imgStickyNotesDistance) + 'px'});
         $('#img-squares').css({'padding-right': (percentScrolled * imgSquaresDistance) + 'px'});
+        }
 
+        if (whichOne === 'velcro') {
         $('#img-velcro').css({'padding-left': (percentScrolled * imgVelcroDistance) + 'px'});
         $('#img-loops').css({'padding-right': (percentScrolled * imgLoopsDistance) + 'px'});
+        }
 
+        if (whichOne === 'penicillin') {
         $('#img-petri').css({'padding-left': (percentScrolled * imgPetriDistance) + 'px'});
         $('#img-circles').css({'padding-right': (percentScrolled * imgCirclesDistance) + 'px'});
+        }
     };
 
 
@@ -65,7 +71,7 @@
             $('#img-sticky-notes').css({'padding-left': imgStickyNotesDistance + 'px'});
             $('#img-squares').css({'padding-right': imgSquaresDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
-            calculatePos(scrollPos, topParallax, bottomParallax);            
+            calculatePos(scrollPos, topParallax, bottomParallax, 'sticky-notes');            
         }
 
     });
@@ -83,7 +89,7 @@
             $('#img-velcro').css({'padding-left': imgVelcroDistance + 'px'});
             $('#img-loops').css({'padding-right': imgLoopsDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
-            calculatePos(scrollPos, topParallax, bottomParallax);            
+            calculatePos(scrollPos, topParallax, bottomParallax, 'velcro');            
         }
 
     });
@@ -101,7 +107,7 @@
             $('#img-petri').css({'padding-left': imgPetriDistance + 'px'});
             $('#img-circles').css({'padding-right': imgCirclesDistance + 'px'});
         } else if (scrollPos > topParallax - $(window).height()) {
-            calculatePos(scrollPos, topParallax, bottomParallax);            
+            calculatePos(scrollPos, topParallax, bottomParallax, 'penicillin');            
         }
 
     });
