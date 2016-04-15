@@ -45,6 +45,8 @@ function init() {
         can.width = 0.9 * window.innerWidth;
         can.height = 0.9 *  window.innerWidth;
     }
+    $('#scroller').css('width', can.width);
+
     leftOff = (window.innerWidth - can.width) / 2;
     $(can).css("left", leftOff);
 
@@ -55,18 +57,18 @@ function init() {
         }
     });
 
-    $(can).mousedown(function(e) {
+    $('#scroller').mousedown(function(e) {
         isDragging = true;
         startDrag = e;
     });
-    $(can).mousemove(function(e) {
+    $('#scroller').mousemove(function(e) {
         if (isDragging && resizeable) {
             var diffX = startDrag.pageX - e.pageX;
             var diffY = startDrag.pageY - e.pageY;
             resizeFactor = Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
         }
     });
-    $(can).mouseup(function() {
+   $('#scroller').mouseup(function() {
         isDragging = false;
     });
     var hammertime = new Hammer(can);
@@ -126,7 +128,7 @@ var stick = function(el) {
                 $(".top-export-panel").show();
                 $(".export-panel").show();
 
-                $(can).addClass('resizeable-drag');
+                $('#scroller').addClass('resizeable-drag');
                 resizeable = true;
                 resizeFactor = 0;
             }
@@ -185,7 +187,7 @@ function removeImage(i) {
         $(".image-list").css("visibility", "visible");
         $('.export-panel').hide();
         $(".top-export-panel").hide();
-        $(can).removeClass('resizeable-drag');
+        $('#scroller').removeClass('resizeable-drag');
         resizeable = false;
 
         $(".BottomNav").show();
