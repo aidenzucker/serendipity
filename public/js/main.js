@@ -226,11 +226,11 @@ function getCursorPosition(event) {
 
 
 //To disable scroll on focus
-$('.description').on('touchstart', function () {
+// $('.description').on('touchstart', function () {
 
-    $('#scroller').css({'overflow': 'hidden'});
+//     $('#scroller').css({'overflow': 'hidden'});
 
-});
+// });
 
 
 
