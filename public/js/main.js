@@ -11,7 +11,7 @@ var botNav;
 
 var resizeable = false;
 var isDragging = false;
-var startDrag, resizeFactor = 0;
+var startDrag;
 
 // Make big array of imgs, randomize them
 var scrollImageLast = 46;
@@ -45,8 +45,15 @@ function init() {
         can.width = 0.9 * window.innerWidth;
         can.height = 0.9 *  window.innerWidth;
     }
+    // makes scroller same width as canvas
+    // $('#scroller').css('width', can.width);
+
     leftOff = (window.innerWidth - can.width) / 2;
     $(can).css("left", leftOff);
+
+    $('.reorder-button').click(function() {
+        drawImages.reverse();
+    });
 
     $('#scroller').click(function(e) {
         var mousePos = getCursorPosition(e);
@@ -55,19 +62,28 @@ function init() {
         }
     });
 
-    $(can).mousedown(function(e) {
+    $('#scroller').mousedown(function(e) {
         isDragging = true;
         startDrag = e;
     });
-    $(can).mousemove(function(e) {
+    $('#scroller').mousemove(function(e) {
         if (isDragging && resizeable) {
             var diffX = startDrag.pageX - e.pageX;
             var diffY = startDrag.pageY - e.pageY;
-            resizeFactor = Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
+            drawImages[drawImages.length - 1].resizeFactor =
+                Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
         }
     });
-    $(can).mouseup(function() {
+   $('#scroller').mouseup(function() {
         isDragging = false;
+    });
+    var hammertime = new Hammer(can);
+    hammertime.get('pinch').set({
+        enable: true
+    });
+    hammertime.on('pinch', function(ev) {
+        drawImages[drawImages.length - 1].resizeFactor =
+            (((ev.scale - .5) / 2.5) - .5) * 600;
     });
 
     var imageList = $('.image-list');
@@ -119,9 +135,8 @@ var stick = function(el) {
                 $(".top-export-panel").show();
                 $(".export-panel").show();
 
-                $(can).addClass('resizeable-drag');
+                $('#scroller').addClass('resizeable-drag');
                 resizeable = true;
-                resizeFactor = 0;
             }
         }
     };
@@ -134,15 +149,9 @@ function render() {
     ctx.fillRect(0, 0, can.width, can.height);
 
     for (var i = 0; i < drawImages.length; i++) {
-        // Both images being drawn, resize
-        if (i == 1) {
-            ctx.drawImage(drawImages[i].img, drawImages[i].left - (resizeFactor / 2),
-                drawImages[i].up - (resizeFactor / 2), drawImages[i].width + resizeFactor,
-                drawImages[i].height + resizeFactor);
-        } else {
-            ctx.drawImage(drawImages[i].img, drawImages[i].left,
-                drawImages[i].up, drawImages[i].width, drawImages[i].height);
-        }
+        ctx.drawImage(drawImages[i].img, drawImages[i].left - (drawImages[i].resizeFactor / 2),
+            drawImages[i].up - (drawImages[i].resizeFactor / 2), drawImages[i].width + drawImages[i].resizeFactor,
+            drawImages[i].height + drawImages[i].resizeFactor);
 
 
         // Draw X if only one img
@@ -178,7 +187,7 @@ function removeImage(i) {
         $(".image-list").css("visibility", "visible");
         $('.export-panel').hide();
         $(".top-export-panel").hide();
-        $(can).removeClass('resizeable-drag');
+        $('#scroller').removeClass('resizeable-drag');
         resizeable = false;
 
         $(".BottomNav").show();

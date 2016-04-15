@@ -42,7 +42,6 @@ right: 0;
 
 .resizeable-drag {
     cursor: nwse-resize !important;
-    z-index: 1000 !important;
 }
 
 /*is this ever used?*/
