@@ -1,6 +1,14 @@
+@font-face {
+font-family: Montserrat-Light;
+font-weight: 200;
+src: url("../fonts/Montserrat-Light.otf") format("opentype");
+}
+
 html, body {
     height: 100%;
     overflow: hidden;
+    font-family: 'Montserrat-Light', Montserrat, Helvetica, Sans-Serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 #scroller {
@@ -15,7 +23,7 @@ html, body {
 
 #paintCanvas {
     position: fixed;
-    top: 198px;
+    top: 184px;
     z-index: -1;
     border: 2px solid white;
     
@@ -29,9 +37,10 @@ html, body {
     right: 0;*/
 }
 
-.jux-back{
+/*is this ever used?*/
+/*.jux-back{
     height: 20px;
-}
+}*/
 
 .scroll-img {
     margin-bottom: 400px;
@@ -53,7 +62,7 @@ html, body {
 ///////////////////////////////////////*/
 
 .jux-intro{
-    padding-top: 352px;
+    padding-top: 30vh;
     text-align: center;
 }
 
@@ -110,16 +119,38 @@ html, body {
      TOP OF EXPORT PANEL    
 /////////////////////////////*/
 
+.top-export-panel{
+    position: absolute;
+    top: 79px;
+
+    background-color: white;
+    display: none;
+
+    border-left: none;
+    border-right: none;
+
+    border-bottom: 1px solid #B3B3B3;
+    border-top: 1px solid #B3B3B3;
+
+    width: 100vw;
+}
+
 .jux-back-button{
     background-color: white;
-    padding: 15px;
+    padding: 22px;
+    padding-left: 0px;
+    padding-right: 0px;
     text-align: left;
-    /*font-family: Montserrat, Helvetica, Sans-Serif;*/
+    /* font-family: Montserrat, Helvetica, Sans-Serif; */
     font-size: 20px;
-    border-top: 1px solid #B3B3B3;
-    display: block;
-    display: none;
+    border-right: 1px solid #B3B3B3;
+    border-collapse: collapse;
+    display: inline-block;
+    float: left;
+
     margin: 0px;
+    width: 25vw;
+
 }
 
 .jux-back-button img{
@@ -133,36 +164,32 @@ html, body {
     color: #999999;
 }
 
+.top-export-panel form{
+    display: inline-block;
+}    
+
 .description {
     font-family: 'Montserrat-Light', Montserrat, Helvetica, Sans-Serif;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
+    border: 0px;
 
     vertical-align: top;
     padding: 15px;
-    width: 100vw;
+    /*width: 100vw;*/
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 
     z-index: 100;
     resize: none;
-    border-left: none;
-    border-right: none;
-    border-top-color: #B3B3B3;
-    border-bottom-color: #B3B3B3;
+    
     -webkit-appearance: none; /*To prevent inner shadow*/
     -webkit-border-radius: 0; /*To prevent corner rounding on mobile*/
     margin: 0px;
 
-    display: none;
-}
-
-.top-export-panel{
-    position: absolute;
-    top: 79px;
-
-    background-color: white;
+    display: inline-block;
+    width: 74vw;
 }
 
 
@@ -192,7 +219,7 @@ html, body {
 
 
 .export-button{
-    padding: 20px;
+    padding: 17px;
     width: 100vw;
     height: 22px;
     display: block;

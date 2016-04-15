@@ -141,8 +141,9 @@ var stick = function(el) {
             if (drawImages.length >= 2) {
                 $(".image-list").css("visibility", "hidden");
                 $(".BottomNav").hide();
-                $(".jux-back-button").show();
-                $(".description").show();
+                $(".top-export-panel").show();
+                // $(".jux-back-button").show();
+                // $(".description").show();
                 $(".export-panel").show();
             }
         }
@@ -188,9 +189,10 @@ function removeImage(i) {
 
     if (drawImages.length < 2) {
         $(".image-list").css("visibility", "visible");
-        $(".description").hide()
         $('.export-panel').hide();
-        $('.jux-back-button').hide();
+        $(".top-export-panel").hide();
+        // $(".description").hide()
+        // $('.jux-back-button').hide();
 
         $(".BottomNav").show();
     }

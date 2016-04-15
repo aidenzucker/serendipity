@@ -16,6 +16,7 @@ body{
     margin: 0px;
 
     background-color: #E6E6E6;
+    z-index: -2;
 }
 
 img{
@@ -490,7 +491,10 @@ blockquote{
 }
 
 .picasso img{
-	width: 25%;
+	/*max-width: 25%;*/
+	transform: scale(0.5, 0.5);
+-ms-transform: scale(0.5, 0.5);
+-webkit-transform: scale(0.5, 0.5);
 }
 
 
@@ -534,47 +538,87 @@ figcaption{
 .frame{
 	border: 2px solid #ED5310;
 	/*z-index: -1;*/
-	max-width: 381px;
+	width: 381px;
 	text-align: left;
 	height: 341px;
 	margin-bottom: -3px;
 	display: inline-block;
 }
 
-#img-xray{
-	margin-left: -100px;
-	margin-top: 88px;
-	width: 50%;
-	float: left;
+@media screen and (max-width: 415px) {
+	.frame{
+		width: 98.5%;
+	}
 }
 
+
+/* (1) XRAY*/
+#img-xray{
+	float: left;
+	margin-left: -100px;
+	margin-top: 39px;
+
+	width: 50%;
+	
+	position: absolute;
+}
 #img-waves{
 	float: right;
-	/*float: bottom;*/
-	margin-top: 30px;
 
+	margin-top: 30px;
 	margin-right: -50px;
+	margin-left: -100px;
+
 	width: 245px;
 }
 
+/* (2) STICKYNOTES*/
 #img-sticky-notes{
+	float: left;
+
 	margin-left: -100px;
 	margin-top: 88px;
-	width: 50%;
-	float: left;
-}
 
+	width: 50%;
+	
+}
 #img-squares{
 	float: right;
-	/*float: bottom;*/
-	margin-top: 30px;
 
+	margin-top: 30px;
 	margin-right: -50px;
+
 	width: 245px;
 }
+
+/* (3) VELCRO*/
+#img-velcro{
+	float: left;
+	width: 200px;
+}
+
+#img-loops{
+	float: right;
+	width: 200px;
+}
+
+/* (4) PENICILLIN*/
+#img-petri{
+	float: left;
+	width: 200px;
+}
+
+#img-circles{
+	float: right;
+	width: 200px;
+}
+
+
 
 .card{
 	display: inline-block;
+	z-index: 20;
+	position: relative;
 }
 
 .card{
@@ -648,7 +692,7 @@ figcaption{
 	.frame{
 	    height: 397px;
 	    /*width: 80vw; */
-	    max-width: 800px;
+	    width: 800px;
 	    display: block;
 	    text-align: left;
 
@@ -664,6 +708,10 @@ figcaption{
 	    float: left;
 	    
 	    
+	}
+
+	#xray{
+		margin-top: 200px;
 	}
 
 	#img-xray{
@@ -768,7 +816,7 @@ figcaption{
 
 /*This effects both on export screen and closeup screen*/
 .share-panel{
-    padding: 22px;
+    padding: 15px;
     padding-left: 43px;
     color: #999999;
     font-size: 20px;
