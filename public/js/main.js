@@ -9,56 +9,16 @@ var xImage = new Image();
 
 var botNav;
 
+var resizeable = false;
+var isDragging = false;
+var startDrag, resizeFactor = 0;
 
-var scrollImgs = [
-    '<li class="scroll-img"><img src="img/image0.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image1.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image2.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image3.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image4.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image5.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image6.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image7.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image8.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image9.png"/></li> ',
-    '<li class="scroll-img"><img src="img/image10.png"/></li>',
-    '<li class="scroll-img"><img src="img/image11.png"/></li>',
-    '<li class="scroll-img"><img src="img/image12.png"/></li>',
-    '<li class="scroll-img"><img src="img/image13.png"/></li>',
-    '<li class="scroll-img"><img src="img/image14.png"/></li>',
-    '<li class="scroll-img"><img src="img/image15.png"/></li>',
-    '<li class="scroll-img"><img src="img/image16.png"/></li>',
-    '<li class="scroll-img"><img src="img/image17.png"/></li>',
-    '<li class="scroll-img"><img src="img/image18.png"/></li>',
-    '<li class="scroll-img"><img src="img/image19.png"/></li>',
-    '<li class="scroll-img"><img src="img/image20.png"/></li>',
-    '<li class="scroll-img"><img src="img/image21.png"/></li>',
-    '<li class="scroll-img"><img src="img/image22.png"/></li>',
-    '<li class="scroll-img"><img src="img/image23.png"/></li>',
-    '<li class="scroll-img"><img src="img/image24.png"/></li>',
-    '<li class="scroll-img"><img src="img/image25.png"/></li>',
-    '<li class="scroll-img"><img src="img/image26.png"/></li>',
-    '<li class="scroll-img"><img src="img/image27.png"/></li>',
-    '<li class="scroll-img"><img src="img/image28.png"/></li>',
-    '<li class="scroll-img"><img src="img/image29.png"/></li>',
-    '<li class="scroll-img"><img src="img/image30.png"/></li>',
-    '<li class="scroll-img"><img src="img/image31.png"/></li>',
-    '<li class="scroll-img"><img src="img/image32.png"/></li>',
-    '<li class="scroll-img"><img src="img/image33.png"/></li>',
-    '<li class="scroll-img"><img src="img/image34.png"/></li>',
-    '<li class="scroll-img"><img src="img/image35.png"/></li>',
-    '<li class="scroll-img"><img src="img/image36.png"/></li>',
-    '<li class="scroll-img"><img src="img/image37.png"/></li>',
-    '<li class="scroll-img"><img src="img/image38.png"/></li>',
-    '<li class="scroll-img"><img src="img/image39.png"/></li>',
-    '<li class="scroll-img"><img src="img/image40.png"/></li>',
-    '<li class="scroll-img"><img src="img/image41.png"/></li>',
-    '<li class="scroll-img"><img src="img/image42.png"/></li>',
-    '<li class="scroll-img"><img src="img/image43.png"/></li>',
-    '<li class="scroll-img"><img src="img/image44.png"/></li>',
-    '<li class="scroll-img"><img src="img/image45.png"/></li>',
-    '<li class="scroll-img"><img src="img/image46.png"/></li>'
-];
+// Make big array of imgs, randomize them
+var scrollImageLast = 46;
+var scrollImgs = []
+for (var i = 0; i <= scrollImageLast; i++) {
+    scrollImgs.push('<li class="scroll-img"><img src="img/image' + i + '.png"/></li>');
+}
 for (var i = 0; i < scrollImgs.length; i++) {
     var toSwap = Math.floor(Math.random() * scrollImgs.length);
     temp = scrollImgs[i];
@@ -93,6 +53,21 @@ function init() {
         if (mousePos.x < can.width && mousePos.y < can.height) {
             testClick(mousePos);
         }
+    });
+
+    $(can).mousedown(function(e) {
+        isDragging = true;
+        startDrag = e;
+    });
+    $(can).mousemove(function(e) {
+        if (isDragging && resizeable) {
+            var diffX = startDrag.pageX - e.pageX;
+            var diffY = startDrag.pageY - e.pageY;
+            resizeFactor = Math.abs(diffX) > Math.abs(diffY) ? diffX : diffY;
+        }
+    });
+    $(can).mouseup(function() {
+        isDragging = false;
     });
 
     var imageList = $('.image-list');
@@ -142,9 +117,11 @@ var stick = function(el) {
                 $(".image-list").css("visibility", "hidden");
                 $(".BottomNav").hide();
                 $(".top-export-panel").show();
-                // $(".jux-back-button").show();
-                // $(".description").show();
                 $(".export-panel").show();
+
+                $(can).addClass('resizeable-drag');
+                resizeable = true;
+                resizeFactor = 0;
             }
         }
     };
@@ -156,9 +133,19 @@ function render() {
     ctx.fillStyle = "#E6E6E6";
     ctx.fillRect(0, 0, can.width, can.height);
 
-    for (var i in drawImages) {
-        ctx.drawImage(drawImages[i].img, drawImages[i].left,
-            drawImages[i].up, drawImages[i].width, drawImages[i].height);
+    for (var i = 0; i < drawImages.length; i++) {
+        // Both images being drawn, resize
+        if (i == 1) {
+            ctx.drawImage(drawImages[i].img, drawImages[i].left - (resizeFactor / 2),
+                drawImages[i].up - (resizeFactor / 2), drawImages[i].width + resizeFactor,
+                drawImages[i].height + resizeFactor);
+        } else {
+            ctx.drawImage(drawImages[i].img, drawImages[i].left,
+                drawImages[i].up, drawImages[i].width, drawImages[i].height);
+        }
+
+
+        // Draw X if only one img
         if (drawImages.length < 2) {
             ctx.drawImage(xImage, drawImages[i].left + drawImages[i].width,
                 drawImages[i].up, drawImages[i].size, drawImages[i].size);
@@ -191,8 +178,8 @@ function removeImage(i) {
         $(".image-list").css("visibility", "visible");
         $('.export-panel').hide();
         $(".top-export-panel").hide();
-        // $(".description").hide()
-        // $('.jux-back-button').hide();
+        $(can).removeClass('resizeable-drag');
+        resizeable = false;
 
         $(".BottomNav").show();
     }

@@ -26,15 +26,11 @@ html, body {
     top: 184px;
     z-index: -1;
     border: 2px solid white;
-    
-    /*This breaks the canvas*/
-  /*  width: 90vw;    
-    height: 90vw;
+}
 
-    // Will not center vertically and won't work in IE6/7.
-    margin: 5% auto; 
-    left: 0;
-    right: 0;*/
+.resizeable-drag {
+    cursor: nwse-resize !important;
+    z-index: 1000 !important;
 }
 
 /*is this ever used?*/
