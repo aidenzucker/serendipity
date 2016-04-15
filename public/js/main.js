@@ -14,6 +14,7 @@ var isDragging = false;
 var startDrag;
 
 // Make big array of imgs, randomize them
+// Change if add images
 var scrollImageLast = 46;
 var scrollImgs = []
 for (var i = 0; i <= scrollImageLast; i++) {
