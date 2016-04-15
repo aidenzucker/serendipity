@@ -71,13 +71,23 @@ app.get("/count", function (req, res) {
 });
 
 app.get("/images/:id", function (req, res) {
-    var path = __dirname + '/gallery/img' + req.params.id + '.png';
+    var id = parseInt(req.params.id);
+    if (id < 0 || id > maxImgIndex || id == null) {
+        res.status(404).send('Invalid ID');
+        return;
+    }
+    var path = __dirname + '/gallery/img' + id + '.png';
 
     res.sendFile(path);
 });
 
 app.get("/information/:id", function (req, res) {
-    db.find({ "imgIndex": parseInt(req.params.id) }, function(err, entry) {
+    var id = parseInt(req.params.id);
+    if (id < 0 || id > maxImgIndex || id == null) {
+        res.status(404).send('Invalid ID');
+        return;
+    }
+    db.find({ "imgIndex": id }, function(err, entry) {
         if (err) {
             console.log("DB Find error: " + err);
         } else {
