@@ -224,6 +224,16 @@ function getCursorPosition(event) {
     return {x: x, y: y};
 }
 
+
+//To disable scroll on focus
+$('.description').on('touchstart', function () {
+
+    $('#scroller').css({'overflow': 'hidden'});
+
+});
+
+
+
 //ZE'EV: these could work and just be poorly implimented
 //(like the first one does the opposite that we want i think)
 //(and the second one is just wrong syntax i think)
