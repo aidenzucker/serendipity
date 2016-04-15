@@ -37,7 +37,7 @@ $(function(){
 function init() {
     can = document.getElementById('paintCanvas');
     ctx = can.getContext('2d');
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth > 445) {
         botVertOffset = 50;
         can.width = window.innerHeight - (topVertOffset + botVertOffset);
         can.height = window.innerHeight - (topVertOffset + botVertOffset);

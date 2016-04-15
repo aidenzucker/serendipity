@@ -140,7 +140,7 @@ h2{
 	width: 100vw;
 	border-collapse: collapse; 
 	border-spacing: 0;
-	max-width: 470px;
+	max-width: 375px;
 
 	margin-left: auto;
 	margin-right: auto;
@@ -282,6 +282,8 @@ h4{
 	font-size: 13px;
 	font-weight: 700;
 	line-height: 20px;
+
+	padding: 10px;
 
 }
 

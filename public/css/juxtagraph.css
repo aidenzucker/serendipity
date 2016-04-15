@@ -251,6 +251,7 @@ html, body {
 .export-button{
     padding: 17px;
     width: 100vw;
+    /*max-width: 400px;*/
     height: 22px;
     display: block;
 
