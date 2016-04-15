@@ -69,6 +69,13 @@ function init() {
     $(can).mouseup(function() {
         isDragging = false;
     });
+    var hammertime = new Hammer(can);
+    hammertime.get('pinch').set({
+        enable: true
+    });
+    hammertime.on('pinch', function(ev) {
+        resizeFactor = (((ev.scale - .5) / 2.5) - .5) * 600;
+    });
 
     var imageList = $('.image-list');
 
