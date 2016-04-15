@@ -13,10 +13,6 @@ html, body {
     text-align: center;
 }
 
-canvas{
-
-}
-
 #paintCanvas {
     position: fixed;
     top: 198px;
@@ -65,8 +61,12 @@ canvas{
     margin-top: 5px;
 }
 
-.jux-intro h4{
+.jux-title{
+    font-family: Lora, Georgia, Serif;
+    font-size: 30px;
+
     margin: 0;
+
 }
 
 .instructions{
