@@ -194,6 +194,16 @@ html, body {
      BOTTOM OF EXPORT PANEL    
 /////////////////////////////*/
 
+.reorder-button{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+}
+
+.reorder-button img{
+    width: 66px;
+}    
+
 .export-panel{
     display: none;
 

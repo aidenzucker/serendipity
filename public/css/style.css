@@ -228,7 +228,7 @@ h2{
 .centered-wrapper{
 	/*display: inline-block;*/
 	margin: 0 auto;
-	max-width: 375px;
+	/*max-width: 375px;*/
 	text-align: center;
 }
 
@@ -238,21 +238,18 @@ h2{
 
 .gallerySlideshow{
 	text-align: center;
-	margin-top: 165px;
-	height: 183px;
-	padding: 50px;
+	margin-top: 7vh;
+	/*height: 183px;*/
+	/*padding: 50px;*/
 }
 
 .gallerySlideshow img{
-	position: relative;
-	top: 0;
-	left: 0;
-	margin: auto;
+	margin-right: 400px
 }
 
-#behind {
-    margin-top: -291px;
-    width: 230px;
+#marquee-left {
+   direction: right;
+   direction: rtl;
 }    
 
 
