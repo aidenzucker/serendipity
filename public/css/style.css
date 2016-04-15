@@ -341,8 +341,8 @@ h4{
     margin: 10px;
     max-width: 300px;
 
-    margin-left: 20px;
-	margin-right: 20px;
+    margin-left: auto;
+	margin-right: auto;
 	left: 0;
 	right: 0;
 }
@@ -518,9 +518,24 @@ blockquote{
 	margin-top: 8px;
 }
 
+.definition-wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	max-width: 600px;
+}
+
 .steps-wrapper{
 	text-align: left;
 	padding-left: 24px;
+	max-width: 900px;
+
+	/*margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;*/
 }
 
 .left-rule{
@@ -574,9 +589,16 @@ blockquote{
 
 
 #blue{
-	margin-left: -20px;
-	padding-left: 0px;
+	float: left;
+	margin-left: -100px;
+	margin-top: 39px;
+
+	width: 50%;
+	
+	position: absolute;
 }
+
+
 
 /*Picasso, Rand and Fuller*/
 figcaption{
@@ -603,12 +625,12 @@ figcaption{
 }
 
 .fuller{
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 	height: 50vh;
 }
 
 .eye img{
-	width: 95vw;
+	width: 95%;
 	position: relative;
 	left: -43px;
 }	
@@ -649,7 +671,7 @@ figcaption{
 	margin-right: -50px;
 	margin-left: -100px;
 
-	width: 245px;
+	width: 100%;
 }
 
 
