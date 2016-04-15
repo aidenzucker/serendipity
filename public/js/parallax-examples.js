@@ -1,9 +1,9 @@
     /* TOP OF DAN CODE */
     var imgXrayDistance = $(window).width(),
-        imgWavesDistance = $(window).width(),
-        imgStickyNotesDistance = $(window).width(),
-        imgSquaresDistance = $(window).width(),
-        ;
+        imgWavesDistance = $(window).width();
+        // imgStickyNotesDistance = $(window).width(),
+        // imgSquaresDistance = $(window).width(),
+        
 
 
     var menuHeight = $('.StickyMenu').height();

@@ -238,20 +238,35 @@ h2{
 
 .gallerySlideshow{
 	text-align: center;
-	margin-top: 7vh;
+	margin-top: -69px;
 	/*height: 183px;*/
 	/*padding: 50px;*/
 }
 
 .gallerySlideshow img{
-	margin-right: 400px
+	margin-right: 400px;
+}
+
+#marquee-right {
+	display: absolute;
+	margin-bottom: -428px;  
 }
 
 #marquee-left {
-   direction: right;
-   direction: rtl;
-}    
+   
+}
 
+.intro-text{
+	max-width: 320px;
+
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	position: absolute;
+	bottom: 50px;
+}
 
 /*AN EDUCATIONAL TOOL FOR CULTIVATING THE ART OF SERENDIPITY*/
 h4{
@@ -263,6 +278,7 @@ h4{
 	font-size: 13px;
 	font-weight: 700;
 	line-height: 20px;
+
 }
 
 .button {
@@ -295,6 +311,13 @@ h4{
 
 footer{
 	padding: 10px;
+	position: absolute;
+	bottom: 6px;
+
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 }
 
 h6{  /*footer*/
@@ -342,6 +365,7 @@ blockquote{
 	padding: 0px;
 	margin: 0 auto;
 	max-width: 362px;
+	margin-left: 16px;
 }
 
 
