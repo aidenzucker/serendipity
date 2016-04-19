@@ -744,6 +744,7 @@ figcaption{
 
 	width: 50%;
 	position: absolute;
+	blend-mode: multiply;
 }
 #img-squares{
 	float: right;
