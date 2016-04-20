@@ -1,6 +1,14 @@
     /* TOP OF DAN CODE */
     var blueDistance = $(window).width(),
         bottomCurveDistance = $(window).width() * .6,
+        leJouDistance = $(window).width() * .6,
+        sheetMusicDistance = $(window).width() * .6,
+        tanSketchDistance = $(window).width() * .6,
+        whiteCircleDistance = $(window).width() * .6,
+        woodenCurvesDistance = $(window).width() * .6,
+        backgroundDistance = $(window).width() * .6,
+
+
         portraitDistance = $(window).width(),
         drawingDistance = $(window).width()
         ;
@@ -16,6 +24,12 @@
         if (whichOne === 'picasso') {
         $('#blue').css({'padding-left': (percentScrolled * blueDistance) + 'px'});
         $('#bottom-curve').css({'padding-left': (percentScrolled * bottomCurveDistance) + 'px'});
+        $('#le-jou').css({'padding-right': (percentScrolled * leJouDistance) + 'px'});
+        $('#sheet-music').css({'padding-left': (percentScrolled * sheetMusicDistance) + 'px'});
+        $('#tan-sketch').css({'padding-right': (percentScrolled * tanSketchDistance) + 'px'});
+        $('#white-circle').css({'padding-left': (percentScrolled * whiteCircleDistance) + 'px'});
+        $('#wooden-curves').css({'padding-right': (percentScrolled * woodenCurvesDistance) + 'px'});
+        $('#background').css({'padding-left': (percentScrolled * backgroundDistance) + 'px'});
         }
 
         if (whichOne === 'fuller') {
@@ -37,10 +51,19 @@
             //Put divs in final position, do this individually on all of them
             $('#blue').css({'padding-left': blueDistance + 'px'});
             $('#bottom-curve').css({'padding-left': bottomCurveDistance + 'px'});
+            $('#le-jou').css({'padding-right': leJouDistance + 'px'});
+            $('#sheet-music').css({'padding-left': sheetMusicDistance + 'px'});
+            $('#tan-sketch').css({'padding-right': tanSketchDistance + 'px'});
+            $('#white-circle').css({'padding-right': whiteCircleDistance + 'px'});
+            $('#wooden-curves').css({'padding-left': woodenCurvesDistance + 'px'});
+            $('#background').css({'padding-right': backgroundDistance + 'px'});
+
         } else if (scrollPos > topParallax - $(window).height()) {
             calculatePos(scrollPos, topParallax, bottomParallax, 'picasso');            
         }
     });
+
+
 
 
     /* FULLER */

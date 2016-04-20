@@ -547,11 +547,14 @@ blockquote{
 	margin-top: 8px;
 }
 
+
 .definition-wrapper{
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
+
+	/*padding-left: 100px;*/
 
 	max-width: 600px;
 }
@@ -574,6 +577,8 @@ blockquote{
 	/*position: relative;
 	left: -20px;*/
 	z-index: -20;
+
+	/*display: inline-block;*/
 }
 
 #confluence{
@@ -606,25 +611,70 @@ blockquote{
 
 .picasso{
 	margin-top: 50px;
-	/*border: 1px solid blue;*/
+
+	border: 1px solid blue;
+	position: relative;
+
+	height: 370px;
 }
 
 .picasso img{
 	/*max-width: 25%;*/
-	transform: scale(0.9, 0.9);
--ms-transform: scale(0.9, 0.9);
--webkit-transform: scale(0.9, 0.9);
+	transform: scale(0.35, 0.35);
+	-ms-transform: scale(0.35, 0.35);
+	-webkit-transform: scale(0.35, 0.35);
+
+	position: absolute;
 }
 
 
+
+#original{
+	float: left;
+    margin-left: -244px;
+    margin-top: -363px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+}
 #blue{
 	float: left;
-	margin-left: -100px;
-	margin-top: 39px;
-
-	width: 50%;
-	
-	position: absolute;
+    margin-left: -52px;
+    margin-top: -122px;
+    position: absolute;
+}
+#bottom-curve{
+	margin-left: -144px;
+    margin-top: 255px;
+}
+#le-jou{
+	float: right;
+	margin-left: -159px;
+    margin-top: 258px;
+}
+#sheet-music{
+	margin-left: 31px;
+    margin-top: -4px;
+}
+#tan-sketch{
+	margin-left: 74px;
+    margin-top: 31px;
+}
+#white-circle{
+	margin-left: 32px;
+    margin-top: 129px;
+}
+#wooden-curves{
+	margin-left: -31px;
+    margin-top: -71px;
+}
+#background{
+	float: left;
+    margin-left: -289px;
+    margin-top: -363px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
 }
 
 
@@ -703,7 +753,53 @@ figcaption{
 	width: 100%;
 }
 
+/*Desktop definition page*/
+@media screen and (min-width: 800px) {
 
+	.ContentWrapper{
+		padding: 15px;
+		text-align: center;
+		margin-top: 103px;
+		background-color: #E6E6E6;
+	}
+
+	.definition-wrapper{
+		margin-left: 0px;
+		margin-right: 0px;
+		
+
+		/*padding-left: 100px;*/
+
+		max-width: 800px;
+
+		border: 1px solid blue;
+		display: inline-block;
+	}
+
+	.steps-wrapper{
+		text-align: left;
+		padding-left: 24px;
+		max-width: 900px;
+
+		/*margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;*/
+	}
+
+	.left-rule{
+		border-left: 1px solid black;
+		margin-left: 15px;
+		margin-top: 100px;
+		/*position: relative;
+		left: -20px;*/
+		z-index: -20;
+
+		/*display: inline-block;*/
+	}
+
+
+}
 
 
 /*////////////////////////////////////////
@@ -941,7 +1037,7 @@ figcaption{
 		/* (1) XRAY*/
 	#img-xray{
 		float: left;
-		margin-left: -10px;
+		margin-left: 92px;
 		margin-top: 39px;
 
 		width: 300px;
@@ -952,7 +1048,7 @@ figcaption{
 		float: right;
 
 		margin-top: 30px;
-		margin-right: -650px;
+		margin-right: -450px;
 		margin-left: -100px;
 
 		width: 345px;
@@ -962,7 +1058,7 @@ figcaption{
 	#img-sticky-notes{
 		float: left;
 
-		margin-left: -100px;
+		margin-left: 100px;
 		margin-top: 109px;
 
 		width: 300px;
@@ -973,7 +1069,7 @@ figcaption{
 		float: right;
 
 		margin-top: -8px;
-		margin-right: -50px;
+		margin-right: -400px;
 
 		width: 245px;
 	}
@@ -981,33 +1077,33 @@ figcaption{
 	/* (3) VELCRO*/
 	#img-velcro{
 		float: left;
-		width: 230px;
+		width: 280px;
 		position: absolute;
 		margin-top: 25px;
-		margin-left: -80px;
+		margin-left: 100px;
 	}
 
 	#img-loops{
 		float: right;
-	    width: 300px;
-	    margin-top: -20px;
-	    margin-right: 200px;
+	    width: 330px;
+	    margin-top: -50px;
+	    margin-right: -400px;
 	}
 
 	/* (4) PENICILLIN*/
 	#img-petri{
 		float: left;
-	    width: 300px;
-	    position: absolute;
-	    margin-left: -200px;
-	    margin-top: 100px;
+    	width: 350px;
+    	position: absolute;
+    	margin-left: 200px;
+    	margin-top: 120px;
 	}
 
 	#img-circles{
 		float: right;
 		width: 300px;
-		margin-top: -20px;
-		margin-right: -100px;
+		margin-top: -40px;
+		margin-right: -400px;
 	}
 
 }
