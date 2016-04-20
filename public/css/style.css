@@ -245,17 +245,25 @@ h2{
 	text-align: center;
 	margin-top: -61px;
 	vertical-align: middle;
-	height: 183px;
+	/*height: 300px;*/
 	/*padding: 50px;*/
 	position: relative;
+
+	margin-top: auto;
+	margin-bottom: auto;
+	top: 0;
+	bottom: 0;
+
+	/*border: 1px solid blue;*/
+	margin-top: 13vh;
 }
 
 .gallerySlideshow img{
 	margin-right: 400px;
 
-	transform: scale(0.5, 0.5);
-	-ms-transform: scale(0.5, 0.5);
-	-webkit-transform: scale(0.5, 0.5);
+	transform: scale(0.9, 0.9);
+	-ms-transform: scale(0.9, 0.9);
+	-webkit-transform: scale(0.9, 0.9);
 
 	/*border: 1px solid blue;*/
 
@@ -268,8 +276,29 @@ h2{
 /*iphone 5*/
 @media screen and (max-width: 374px) {
 	.gallerySlideshow{
-		margin-top: -117px;
+		margin-top: 5px;
 	}
+
+	.gallerySlideshow img{
+	transform: scale(0.5, 0.5);
+	-ms-transform: scale(0.5, 0.5);
+	-webkit-transform: scale(0.5, 0.5);
+	}
+
+}
+
+/*desktop*/
+@media screen and (min-width: 1000px) {
+	.gallerySlideshow img{
+		transform: scale(1, 1);
+		-ms-transform: scale(1, 1);
+		-webkit-transform: scale(1, 1);
+	}
+
+	.gallerySlideshow{
+		margin-top: 15vh;
+	}
+
 }
 
 #marquee-right {
@@ -411,7 +440,7 @@ blockquote{
 	font-family: Lora, Georgia, Serif;
 	font-size: 23px;
 	text-align: left;
-	text-indent: -0.5em; /*Hangs quote*/
+	text-indent: -0.4em; /*Hangs quote*/
 	padding: 0px;
 	margin: 0 auto;
 	max-width: 362px;
@@ -582,9 +611,9 @@ blockquote{
 
 .picasso img{
 	/*max-width: 25%;*/
-	transform: scale(0.5, 0.5);
--ms-transform: scale(0.5, 0.5);
--webkit-transform: scale(0.5, 0.5);
+	transform: scale(0.9, 0.9);
+-ms-transform: scale(0.9, 0.9);
+-webkit-transform: scale(0.9, 0.9);
 }
 
 
@@ -721,7 +750,7 @@ figcaption{
 	margin-left: -100px;
 	margin-top: 39px;
 
-	width: 50%;
+	width: 200px;
 	
 	position: absolute;
 }
@@ -740,16 +769,16 @@ figcaption{
 	float: left;
 
 	margin-left: -100px;
-	margin-top: 88px;
+	margin-top: 109px;
 
-	width: 50%;
+	width: 300px;
 	position: absolute;
 	blend-mode: multiply;
 }
 #img-squares{
 	float: right;
 
-	margin-top: 30px;
+	margin-top: -8px;
 	margin-right: -50px;
 
 	width: 245px;
@@ -758,25 +787,33 @@ figcaption{
 /* (3) VELCRO*/
 #img-velcro{
 	float: left;
-	width: 200px;
+	width: 230px;
 	position: absolute;
+	margin-top: 25px;
+	margin-left: -80px;
 }
 
 #img-loops{
 	float: right;
-	width: 200px;
+    width: 300px;
+    margin-top: -20px;
+    margin-right: 200px;
 }
 
 /* (4) PENICILLIN*/
 #img-petri{
 	float: left;
-	width: 200px;
-	position: absolute;
+    width: 300px;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: 100px;
 }
 
 #img-circles{
 	float: right;
-	width: 200px;
+	width: 300px;
+	margin-top: -20px;
+	margin-right: -100px;
 }
 
 
@@ -849,6 +886,8 @@ figcaption{
 	margin-bottom: 15px;
 }
 
+
+/*makes the examples page responsive*/
 @media screen and (min-width: 800px) {
 	.example{
 		margin-bottom: 269px;
@@ -899,6 +938,77 @@ figcaption{
 		margin-bottom: 500px;
 	}
 
+		/* (1) XRAY*/
+	#img-xray{
+		float: left;
+		margin-left: -10px;
+		margin-top: 39px;
+
+		width: 300px;
+		
+		position: absolute;
+	}
+	#img-waves{
+		float: right;
+
+		margin-top: 30px;
+		margin-right: -650px;
+		margin-left: -100px;
+
+		width: 345px;
+	}
+
+	/* (2) STICKYNOTES*/
+	#img-sticky-notes{
+		float: left;
+
+		margin-left: -100px;
+		margin-top: 109px;
+
+		width: 300px;
+		position: absolute;
+		blend-mode: multiply;
+	}
+	#img-squares{
+		float: right;
+
+		margin-top: -8px;
+		margin-right: -50px;
+
+		width: 245px;
+	}
+
+	/* (3) VELCRO*/
+	#img-velcro{
+		float: left;
+		width: 230px;
+		position: absolute;
+		margin-top: 25px;
+		margin-left: -80px;
+	}
+
+	#img-loops{
+		float: right;
+	    width: 300px;
+	    margin-top: -20px;
+	    margin-right: 200px;
+	}
+
+	/* (4) PENICILLIN*/
+	#img-petri{
+		float: left;
+	    width: 300px;
+	    position: absolute;
+	    margin-left: -200px;
+	    margin-top: 100px;
+	}
+
+	#img-circles{
+		float: right;
+		width: 300px;
+		margin-top: -20px;
+		margin-right: -100px;
+	}
 
 }
 

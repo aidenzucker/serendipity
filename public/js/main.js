@@ -134,7 +134,7 @@ var stick = function(el) {
                 $(".image-list").css("visibility", "hidden");
                 $(".BottomNav").hide();
                 $(".top-export-panel").show();
-                $(".export-panel").show();
+                $(".bottom-export-panel").show();
 
                 $('#scroller').addClass('resizeable-drag');
                 resizeable = true;
@@ -186,7 +186,7 @@ function removeImage(i) {
 
     if (drawImages.length < 2) {
         $(".image-list").css("visibility", "visible");
-        $('.export-panel').hide();
+        $('.bottom-export-panel').hide();
         $(".top-export-panel").hide();
         $('#scroller').removeClass('resizeable-drag');
         resizeable = false;
