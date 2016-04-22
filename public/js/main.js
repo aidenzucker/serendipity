@@ -18,7 +18,10 @@ var submitting = false;
 // Make big array of imgs, randomize them
 // Change if add images
 var scrollImageLast = 86;
+var scrollLoadNum = 10;
+var lastScrollImg = scrollLoadNum;
 var scrollImgs = []
+
 for (var i = 0; i <= scrollImageLast; i++) {
     scrollImgs.push('<li class="scroll-img"><img src="img/image' + i + '.png"/></li>');
 }
@@ -30,11 +33,12 @@ for (var i = 0; i < scrollImgs.length; i++) {
 }
 
 
+
 $(function(){
     xImage.onload = function() { init(); };
     xImage.src = "img/buttons/x.png";
     botNav = $('.BottomNav').children().clone();
-    $('.image-list').html(scrollImgs.join(' '));
+    $('.image-list').html(scrollImgs.slice(0,scrollLoadNum).join(' '));
 });
 
 function init() {
@@ -58,6 +62,15 @@ function init() {
         drawImages.reverse();
     });
 
+    $('#scroller').scroll(function(e) {
+        // Lazy Load when reached the bottom
+        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+            var lastS = lastScrollImg + 1;
+            $('.image-list').append(
+                scrollImgs.slice(lastS, lastS + scrollLoadNum).join(' '));
+            lastScrollImg = lastS + scrollLoadNum;
+        }
+    });
     $('#scroller').click(function(e) {
         var mousePos = getCursorPosition(e);
         if (mousePos.x < can.width && mousePos.y < can.height) {

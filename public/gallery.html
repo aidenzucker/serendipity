@@ -59,37 +59,6 @@
     </ul>
   </div>
   <!--End Pattern HTML-->
-
+  <script type="text/javascript" src="js/gallery.js"></script>
 </body>
-  <script>
-    var temp = "<li><a><img class='gal-img' src=''/></a></li>";
-
-    function getImage(i) {
-        var newImage = $(temp);
-        newImage.find('img').attr("src", '/images/' + i);
-        newImage.find('a').attr("href", '/detail/' + i);
-
-        $('.gallery-list').prepend(newImage);
-    }
-
-    $.ajax({
-        url: '/count',
-        type: 'GET',
-        success: function (data) {
-            console.log('success: ' + JSON.stringify(data));
-            for (var i = 0; i <= data.count; i++) {
-                getImage(i);
-            }
-        },
-         error: function (error) {
-            console.log('fail: ' + data);
-        }
-    });
-
-  </script>
-
-    <!-- Needed on every page: -->
-  <!-- <script type="text/javascript" src="js/templates.js"></script>
-
-  <script type="text/javascript" src="js/temp.js"></script>-->
 </html>
