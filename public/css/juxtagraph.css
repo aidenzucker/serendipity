@@ -16,12 +16,16 @@ html, body {
     overflow-x: hidden;
     height: 100%;
     -webkit-overflow-scrolling: touch;
-    /*width: 90vw;*/
 
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+<<<<<<< HEAD
+=======
+
+    z-index: -1;
+>>>>>>> 3dcdbeb4d9f2532637462da8998189e0320ca768
 }
 
 .canvas-wrapper{
@@ -40,7 +44,7 @@ html, body {
 #paintCanvas {
     position: fixed;
     top: 154px;
-    z-index: -1;
+    z-index: -10;
     border: 2px solid white;
 }
 
@@ -161,6 +165,7 @@ html, body {
     border-top: 1px solid #B3B3B3;
 
     width: 100vw;
+    z-index: 100;
 }
 
 .jux-back-button{
@@ -254,6 +259,7 @@ html, body {
     border-top: 1px solid #B3B3B3;
 
     text-align: center;
+    z-index: 100;
 }
 
 .bottom-export-panel a {

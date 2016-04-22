@@ -13,6 +13,8 @@ var resizeable = false;
 var isDragging = false;
 var startDrag;
 
+var submitting = false;
+
 // Make big array of imgs, randomize them
 // Change if add images
 var scrollImageLast = 46;
@@ -101,7 +103,11 @@ function init() {
     });
 
     $(document).on('click', '.export', function() {
-        exportCan();
+        if (!submitting) {
+            exportCan();
+            submitting = true;
+            // Insert loading thing here
+        }
     });
 
     setInterval(render, 60);
