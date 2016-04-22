@@ -23,7 +23,7 @@ var lastScrollImg = scrollLoadNum;
 var scrollImgs = []
 
 for (var i = 0; i <= scrollImageLast; i++) {
-    scrollImgs.push('<li class="scroll-img"><img src="img/image' + i + '.png"/></li>');
+    scrollImgs.push('<li class="scroll-img"><img class="j-img" src="img/image' + i + '.png"/></li>');
 }
 for (var i = 0; i < scrollImgs.length; i++) {
     var toSwap = Math.floor(Math.random() * scrollImgs.length);
@@ -104,10 +104,8 @@ function init() {
 
     var imageList = $('.image-list');
 
-    imageList.find('img').each(function(){
-        this.addEventListener('click', function(e) {
-            stick(this);
-        });
+    $(document).on('click', '.j-img', function(e) {
+        stick(this);
     });
 
     // Dynamic listeners
