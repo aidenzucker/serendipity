@@ -1,7 +1,7 @@
 var can, ctx;
 
 var drawImages = [];
-var topVertOffset = 198;
+var topVertOffset = 155;
 var botVertOffset = 120;
 var leftOff = 10;
 
