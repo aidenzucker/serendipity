@@ -21,11 +21,8 @@ html, body {
     margin-right: auto;
     left: 0;
     right: 0;
-<<<<<<< HEAD
-=======
 
     z-index: -1;
->>>>>>> 3dcdbeb4d9f2532637462da8998189e0320ca768
 }
 
 .canvas-wrapper{
