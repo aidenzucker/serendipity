@@ -736,21 +736,17 @@ figcaption{
 
 #portrait{
 	float: left;
-	margin-left: -100px;
-	margin-top: 39px;
-
-	width: 50%;
-	
-	position: absolute;
+    margin-left: -100px;
+    margin-top: 93px;
+    width: 250px;
+    position: absolute;
 }
 #drawing{
 	float: right;
-
-	margin-top: 30px;
-	margin-right: -50px;
-	margin-left: -100px;
-
-	width: 100%;
+    margin-top: 33px;
+    margin-right: -125px;
+    margin-left: -72px;
+    width: 400px;
 }
 
 /*Desktop definition page*/
@@ -796,6 +792,22 @@ figcaption{
 		z-index: -20;
 
 		/*display: inline-block;*/
+	}
+
+	#portrait{
+	float: left;
+    margin-left: -100px;
+    margin-top: 93px;
+    width: 250px;
+    position: absolute;
+	}
+	
+	#drawing{
+	float: right;
+    margin-top: 33px;
+    margin-right: -125px;
+    margin-left: -72px;
+    width: 400px;
 	}
 
 
@@ -893,7 +905,7 @@ figcaption{
 	float: right;
     width: 300px;
     margin-top: -20px;
-    margin-right: 200px;
+    margin-right: -80px;
 }
 
 /* (4) PENICILLIN*/
