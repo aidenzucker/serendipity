@@ -17,7 +17,7 @@ var submitting = false;
 
 // Make big array of imgs, randomize them
 // Change if add images
-var scrollImageLast = 46;
+var scrollImageLast = 86;
 var scrollImgs = []
 for (var i = 0; i <= scrollImageLast; i++) {
     scrollImgs.push('<li class="scroll-img"><img src="img/image' + i + '.png"/></li>');
