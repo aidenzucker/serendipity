@@ -167,7 +167,7 @@ html, body {
 
 .jux-back-button{
     color: #B3B3B3;
-
+    cursor: pointer;
 
     background-color: white;
     padding: 22px;
@@ -281,6 +281,10 @@ html, body {
     margin-right: auto;
     left: 0;
     right: 0;
+}
+
+.export {
+    cursor: pointer;
 }
 
 .export-button{
