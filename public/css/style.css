@@ -705,6 +705,8 @@ figcaption{
 	-webkit-box-align:center;
     -webkit-box-pack:center;
     display:-webkit-box;
+
+    position: relative;
 }
 
 .fuller{
@@ -713,6 +715,9 @@ figcaption{
 }
 
 .eye img{
+	/*transform: scale(0.9, 0.9);
+	-ms-transform: scale(0.9, 0.9);
+	-webkit-transform: scale(0.9, 0.9);*/
 	width: 95%;
 	position: relative;
 	left: -43px;
@@ -724,7 +729,9 @@ figcaption{
 
 #pupil{
 	position: absolute;
-	/*top: 0px;*/
+	margin-top: 10px;
+
+	top: 2px;
 }
 
 .fuller img{

@@ -8,6 +8,7 @@
         woodenCurvesDistance = $(window).width() * .6,
         backgroundDistance = $(window).width() * .6,
 
+        pupilDistance = $(window).width() * .3, //this might not work bc not whole width
 
         portraitDistance = $(window).width(),
         drawingDistance = $(window).width()
@@ -30,6 +31,10 @@
         $('#white-circle').css({'padding-left': (percentScrolled * whiteCircleDistance) + 'px'});
         $('#wooden-curves').css({'padding-right': (percentScrolled * woodenCurvesDistance) + 'px'});
         $('#background').css({'padding-left': (percentScrolled * backgroundDistance) + 'px'});
+        }
+
+        if (whichOne === 'eye') {
+        $('#pupil').css({'margin-top': (percentScrolled * pupilDistance) + 'px'});
         }
 
         if (whichOne === 'fuller') {
@@ -64,6 +69,22 @@
     });
 
 
+    /* RAND */
+    $(window).on('scroll', function () {
+
+        var topParallax = $('.eye').offset().top,
+            bottomParallax = topParallax + $('.eye').height();
+
+        var scrollPos = $(window).scrollTop();
+
+        if (scrollPos > bottomParallax ) {
+            //Put divs in final position, do this individually on all of them
+            $('#pupil').css({'margin-top': pupilDistance + 'px'});
+
+        } else if (scrollPos > topParallax - $(window).height()) {
+            calculatePos(scrollPos, topParallax, bottomParallax, 'eye');            
+        }
+    });
 
 
     /* FULLER */
