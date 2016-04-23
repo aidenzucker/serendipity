@@ -119,14 +119,13 @@ app.get("/detail/:id", function (req, res) {
 
             var detailURL = "www.serendipity.how/detail/" + id;
             var tweetURL = "https://twitter.com/home?status=Check%20out%20this%20juxtagraph%20and%20make%20your%20own%20at%20www.serendipity.how,%20a%20website%20about%20cultivating%20the%20art%20serendipity%20by%20%40aidenzucker%20here:" + detailURL;
-            console.log(tweetURL);
 
             res.render("detail", {
                 description: entry[0].commentary,
+                tweet: tweetURL,
                 imageURL: "/images/" + id,
                 nextURL: "/detail/" + prevIndex,
                 prevURL: "/detail/" + nextIndex,
-                tweet: tweetURL
             });
         }
     });
