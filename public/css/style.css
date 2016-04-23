@@ -714,25 +714,19 @@ figcaption{
 	left: -43px;
 }	
 
+#eye{
+
+}
+
+#pupil{
+	position: absolute;
+	/*top: 0px;*/
+}
+
 .fuller img{
 	/*width: 50vw;*/
 }
 
-/*DOESN'T WORK*/
-/*#drawing{
-	float: right;
-    margin-top: 8px;
-    margin-right: -200px;
-    width: 101%;
-}
-
-#portrait{
-    margin-left: -178px;
-    margin-bottom: -49vh;
-    width: 78%;
-    position: absolute;
-    margin-top: 50px;
-}*/
 
 #portrait{
 	float: left;
@@ -794,20 +788,20 @@ figcaption{
 		/*display: inline-block;*/
 	}
 
-	#portrait{
-	float: left;
-    margin-left: -100px;
-    margin-top: 93px;
-    width: 250px;
-    position: absolute;
-	}
-	
 	#drawing{
-	float: right;
-    margin-top: 33px;
-    margin-right: -125px;
-    margin-left: -72px;
-    width: 400px;
+		float: right;
+	    margin-top: 33px;
+	    margin-right: -125px;
+	    margin-left: -72px;
+	    width: 700px;
+	}
+
+	#portrait{
+		float: left;
+	    margin-left: -300px;
+	    margin-top: 182px;
+	    width: 350px;
+	    position: absolute;
 	}
 
 
