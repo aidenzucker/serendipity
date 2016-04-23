@@ -94,10 +94,14 @@ h2{
 .TopNav {
 	color: #1B53C2;
 	/*padding-top: 22px;*/
-	padding-bottom: 38px;
+	padding-bottom: 38px;   /*This creates awk spacing on detail page*/
 	vertical-align: middle;
 
 	background-color: white;
+}
+
+#top-nav-detail-page{
+	padding-bottom: 20px;
 }
 
 .TopNav a{
@@ -1160,8 +1164,29 @@ figcaption{
 	height: 22px;
 }
 
+.closeup-image-wrapper{
+
+}
+
+.closeup-image-wrapper img{
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 243px;
+    margin-top: 54px;
+}
+
+@media screen and (min-height: 600px) {  /*For bigger phones*/
+	.closeup-image-wrapper img{
+	    width: 289px;
+    	margin-top: 67px;
+	}
+}	
+
+
 .closeup-info-panel{
-    position: fixed;
+    position: absolute;
     bottom:0;
     left:0;
     right:0;
@@ -1214,7 +1239,7 @@ figcaption{
 /////////////////////////////*/
 
 .gallery {
-    margin-top: 189px;
+    margin-top: 20px;
 }
 
 .gallery-list {
