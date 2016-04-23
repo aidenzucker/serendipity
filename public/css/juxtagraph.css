@@ -11,6 +11,30 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+.loading{
+    background-color:rgba(27,83,194,0.9);
+    position: absolute;
+    top: 78px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    text-align: center;
+    vertical-align: middle;
+
+    display: none;
+    z-index: 101;
+}
+
+.loading img{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 100px;
+   margin-top: -52px; /* Half the height */
+   margin-left: -50px; /* Half the width */
+}
+
 #scroller {
     overflow: scroll;
     overflow-x: hidden;

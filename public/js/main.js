@@ -118,6 +118,7 @@ function init() {
             exportCan();
             submitting = true;
             // Insert loading thing here
+            $(".loading").show();
         }
     });
 
