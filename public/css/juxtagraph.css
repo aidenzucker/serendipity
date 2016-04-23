@@ -163,24 +163,6 @@ html, body {
 
 
 /*/////////////////////////////
-     DESKTOP EXPORT PANEL
-/////////////////////////////*/
-    @media screen and (min-width: 1100px) {
-   /* .juxtagraph-wrapper{
-        border: 1px solid red;
-    }
-
-    .all-export-panels{
-        max-width: 200px;
-    }
-
-    .all-export-panels div{
-        display: inline-block;
-        display: none;
-    }*/
-}
-
-/*/////////////////////////////
      TOP OF EXPORT PANEL    
 /////////////////////////////*/
 
@@ -261,6 +243,13 @@ html, body {
     width: 74vw;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 
 
 /*/////////////////////////////
@@ -313,9 +302,10 @@ html, body {
     text-decoration: none;
 }
 
+
+
 .share-panel-wrapper{
     width: 100%;
-
     /*border: 1px solid red;*/
 }
 
@@ -366,6 +356,158 @@ html, body {
     height: 12px;
     margin-left: 10px;
 }
+
+
+/*/////////////////////////////
+     DESKTOP EXPORT PANEL (puts everything in right column)
+/////////////////////////////*/
+@media screen and (min-width: 950px) {
+    .juxtagraph-wrapper{
+        /*border: 1px solid red;*/
+    }
+
+    .all-export-panels{
+        position: absolute;
+        right: 0;
+        padding-right: 20px;
+
+        height: 100vh;
+        width: 24vw;
+        padding-top: 52px;
+
+        /*border: 1px solid blue;*/
+    }
+
+    .top-export-panel{
+        position: static;
+
+        background-color: white;
+
+        border: 1px solid #B3B3B3;
+
+        width: 100%;
+        z-index: 100;
+    }
+
+    .bottom-export-panel{
+    
+        position: static;
+        bottom:0;
+        left:0;
+        right:0;
+        width: 100%;
+         -webkit-backface-visibility:hidden;
+        padding: 0;
+
+
+        text-align: center;
+        z-index: 100;
+    }
+
+    .jux-back-button{
+        color: #B3B3B3;
+        cursor: pointer;
+
+        background-color: white;
+        padding: 11px;
+        padding-left: 7px;
+        padding-right: 0px;
+        text-align: center;
+        /* font-family: Montserrat, Helvetica, Sans-Serif; */
+        font-size: 16px;
+        border-bottom: 1px solid #B3B3B3;
+        border-right: 0px;
+        border-collapse: collapse;
+        display: block;
+
+        margin: 0px;
+        width: auto;
+        text-align: left;
+        float: none;
+    }
+
+    .jux-back-button img{
+        height: 15px;
+    }    
+
+    .description {
+        font-size: 16px;
+
+        vertical-align: top;
+        padding: 15px;
+        /*width: 100vw;*/
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+        z-index: 100;
+        resize: none;
+        
+        -webkit-appearance: none; /*To prevent inner shadow*/
+        -webkit-border-radius: 0; /*To prevent corner rounding on mobile*/
+        margin: 0px;
+
+        display: block;
+        width: 100%;
+    }
+
+    .top-export-panel form{
+    display: block;
+    } 
+
+    .export-button{
+        padding: 17px;
+        width: auto;
+        /*max-width: 400px;*/
+        height: 22px;
+        display: block;
+
+        background-color: #1B53C2;
+        color: white;
+        font-family: Montserrat, Helvetica, Sans-Serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 17px;
+        text-align: center;
+        /*line-height: 22px;*/
+        /*vertical-align: text-top;*/
+    }
+
+    /*"Add to gallery"*/
+    .button-label{
+        margin-right: -2px;
+        margin-top: 1px;
+        display: inline-block;
+    }
+
+    .button-label img {
+        height: 12px;
+        margin-left: 10px;
+    }
+
+    .reorder-button{
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+        margin: 0;
+
+        font-size: 16px;
+        color: #1B53C2;
+
+        max-width: 170px;
+        padding: 11px;
+        background-color: white;
+        border: 1px solid #1B53C2;
+
+        margin-bottom: 2px;
+
+
+    }
+
+}
+
+
+
+
 
 
 
