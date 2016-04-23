@@ -13,10 +13,11 @@
     var temp = "<li><a><img class='gal-img' src=''/></a></li>";
 
     function loadImageSet() {
-       var c = Math.min(totalCount, currentImg+loadAmount);
-       for (var i = 0; i <= c; i++) {
+        var c = Math.min(totalCount, currentImg + loadAmount);
+        for (var i = currentImg; i < c; i++) {
            getImage(i);
-       }
+        }
+        currentImg = c
     }
 
     function getImage(i) {
