@@ -38,7 +38,8 @@ $(function(){
     xImage.onload = function() { init(); };
     xImage.src = "img/buttons/x.png";
     botNav = $('.BottomNav').children().clone();
-    $('.image-list').html(scrollImgs.slice(0,scrollLoadNum).join(' '));
+    // $('.image-list').html(scrollImgs.slice(0,scrollLoadNum).join(' ')); What was here before
+    $('.image-list')(scrollImgs.slice(0,scrollLoadNum).join(' '));
 });
 
 function init() {
@@ -224,11 +225,11 @@ function exportCan() {
             commentary: $('.description').val(),
         }),
         success: function (data) {
-                window.location.href = '/gallery.html';
+                window.location.href = '/gallery';
                 return data;
             },
          error: function (error) {
-                window.location.href = '/gallery.html';
+                window.location.href = '/gallery';
                 return "Error!";
             }
     });
