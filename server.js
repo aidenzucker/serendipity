@@ -9,7 +9,25 @@ db = new Datastore({ filename: 'db.json', autoload: true });
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+var publicDir = __dirname + '/public'
+
+// Hack allowing cutting off ".html" w/o making a bunch of routes
+// http://stackoverflow.com/questions/16895047/
+app.use(function(req, res, next) {
+    if (req.path.indexOf('.') === -1 && req.path.indexOf('../') === -1) {
+        var file = publicDir + req.path + '.html';
+        fs.exists(file, function(exists) {
+            if (exists)
+                req.url += '.html';
+            next();
+        });
+    }
+    else {
+        next();
+    }
+});
+
+app.use(express.static(publicDir));
 app.use(bodyParser.json({limit: '50mb'}));
 
 app.engine('handlebars', exphbs());
