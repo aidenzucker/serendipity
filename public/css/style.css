@@ -366,6 +366,7 @@ h4{
     text-decoration: none;
     text-align: center;
 
+    color: #1B53C2;
     background-color: white;
     border: solid #1B53C2 2px;
     padding: 16px 32px;
@@ -544,6 +545,12 @@ blockquote{
 	right: 0;
 }
 
+@media screen and (max-height: 600px) {
+	.scroll-hint{
+		margin-top: 12vh;
+	}
+}
+
 .scroll-hint img{
 	width: 20px;
 	display: block;
@@ -588,6 +595,11 @@ blockquote{
 	margin-right: auto;
 	left: 0;
 	right: 0;
+
+	/*	Drop shadow*/
+	/*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .definition-card div, .definition-card h2{
@@ -675,7 +687,7 @@ blockquote{
 .picasso{
 	margin-top: 50px;
 
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 	position: relative;
 
 	height: 370px;
@@ -702,42 +714,46 @@ blockquote{
 }
 #blue{
 	float: left;
-    margin-left: -52px;
+    margin-left: -76px;
     margin-top: -122px;
     position: absolute;
 }
 #bottom-curve{
 	margin-left: -144px;
     margin-top: 255px;
+    left: 13px;
 }
 #le-jou{
 	float: right;
-	margin-left: -159px;
+	margin-left: -150px;
     margin-top: 258px;
 }
 #sheet-music{
-	margin-left: 31px;
     margin-top: -4px;
+    padding-left: 262px;
 }
 #tan-sketch{
-	margin-left: 74px;
+	margin-left: 88px;
     margin-top: 31px;
 }
 #white-circle{
 	margin-left: 32px;
-    margin-top: 129px;
+    margin-top: 129px;    
+    left: 105px;
+
 }
 #wooden-curves{
-	margin-left: -31px;
+	margin-left: -15px;
     margin-top: -71px;
 }
 #background{
-	float: left;
-    margin-left: -289px;
+    margin-right: 38px;
+    float: left;
     margin-top: -363px;
     position: absolute;
     top: 0px;
     bottom: 0px;
+    left: -232px;
 }
 
 
@@ -832,7 +848,7 @@ figcaption{
 
 		max-width: 800px;
 
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		display: inline-block;
 	}
 
@@ -905,7 +921,7 @@ figcaption{
 	width: 381px;
 	text-align: left;
 	height: 341px;
-	margin-bottom: -3px;
+	margin-bottom: -5px;
 	display: inline-block;
 }
 
@@ -994,10 +1010,9 @@ figcaption{
 	display: inline-block;
 	/*z-index: 2;*/
 	position: relative;
-}
-
-.card{
 	max-width: 385px;
+
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .card-header {
@@ -1250,6 +1265,12 @@ figcaption{
 	}
 }	
 
+@media screen and (min-width: 800px) {  /*For bigger phones*/
+	.closeup-image-wrapper img{
+	    width: 70vh;
+    	margin-top: 12px;
+	}
+}
 
 .closeup-info-panel{
     position: absolute;

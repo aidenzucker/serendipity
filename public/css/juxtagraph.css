@@ -88,9 +88,30 @@ html, body {
     padding: 0px;
 }
 
+/*for small phones*/
 .image-list img{
-    /*width: 150px;*/
+    transform: scale(0.7, 0.7);
+    -ms-transform: scale(0.7, 0.7);
+    -webkit-transform: scale(0.7, 0.7);
 }
+
+/*for bigger phones*/
+@media screen and (min-width: 350px) {
+    .image-list img{    
+        transform: scale(0.8, 0.8);
+        -ms-transform: scale(0.8, 0.8);
+        -webkit-transform: scale(0.8, 0.8);
+    }
+}   
+
+/*For desktop*/
+@media screen and (min-width: 800px) { 
+    .image-list img{
+        transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+    }
+}   
 
 
 /*////////////////////////////////////////

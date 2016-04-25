@@ -1,12 +1,12 @@
     /* TOP OF DAN CODE */
     var blueDistance = $(window).width(),
-        bottomCurveDistance = $(window).width() * .6,
+        bottomCurveDistance = $(window).width(),
         leJouDistance = $(window).width() * .6,
-        sheetMusicDistance = $(window).width() * .6,
-        tanSketchDistance = $(window).width() * .6,
-        whiteCircleDistance = $(window).width() * .6,
-        woodenCurvesDistance = $(window).width() * .6,
-        backgroundDistance = $(window).width() * .6,
+        sheetMusicDistance = $(window).width() * .9,
+        tanSketchDistance = $(window).width() * .5,
+        whiteCircleDistance = $(window).width() * .3,
+        woodenCurvesDistance = $(window).width() * .4,
+        backgroundDistance = $(window).width() * .2,
 
         pupilDistance = $(window).width() * .3, //this might not work bc not whole width
 
@@ -24,13 +24,13 @@
         
         if (whichOne === 'picasso') {
         $('#blue').css({'padding-left': (percentScrolled * blueDistance) + 'px'});
-        $('#bottom-curve').css({'padding-left': (percentScrolled * bottomCurveDistance) + 'px'});
+        $('#bottom-curve').css({'margin-left': (-1 * percentScrolled * bottomCurveDistance) + 'px'});
         $('#le-jou').css({'padding-right': (percentScrolled * leJouDistance) + 'px'});
-        $('#sheet-music').css({'padding-left': (percentScrolled * sheetMusicDistance) + 'px'});
+        $('#sheet-music').css({'margin-left': (-1 * percentScrolled * sheetMusicDistance) + 'px'});
         $('#tan-sketch').css({'padding-right': (percentScrolled * tanSketchDistance) + 'px'});
-        $('#white-circle').css({'padding-left': (percentScrolled * whiteCircleDistance) + 'px'});
+        $('#white-circle').css({'margin-left': (-1 * percentScrolled * whiteCircleDistance) + 'px'});
         $('#wooden-curves').css({'padding-right': (percentScrolled * woodenCurvesDistance) + 'px'});
-        $('#background').css({'padding-left': (percentScrolled * backgroundDistance) + 'px'});
+        $('#background').css({'margin-left': (-1 * percentScrolled * backgroundDistance) + 'px'});
         }
 
         if (whichOne === 'eye') {
@@ -57,7 +57,7 @@
             $('#blue').css({'padding-left': blueDistance + 'px'});
             $('#bottom-curve').css({'padding-left': bottomCurveDistance + 'px'});
             $('#le-jou').css({'padding-right': leJouDistance + 'px'});
-            $('#sheet-music').css({'padding-left': sheetMusicDistance + 'px'});
+            $('#sheet-music').css({'margin-left': sheetMusicDistance + 'px'});
             $('#tan-sketch').css({'padding-right': tanSketchDistance + 'px'});
             $('#white-circle').css({'padding-right': whiteCircleDistance + 'px'});
             $('#wooden-curves').css({'padding-left': woodenCurvesDistance + 'px'});
