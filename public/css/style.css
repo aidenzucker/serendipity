@@ -51,6 +51,7 @@ body a:hover{
 
 h1{
 	font-family: Lora, Georgia, Serif;
+	font-weight: 700;
 	text-align: center;
 }
 
@@ -123,6 +124,7 @@ h2{
 
 #logo{
 	font-family: Lora, Georgia, Serif;
+	font-weight: 700;
 	color: #B3B3B3;
 	font-size: 50px;
 	position: relative;
@@ -362,6 +364,7 @@ h4{
 
 .button {
     font-family: Lora, Georgia, Serif;
+    font-weight: 700;
     font-size: 26px;
     text-decoration: none;
     text-align: center;
@@ -502,6 +505,7 @@ border: 2px solid blue;
 
 blockquote{
 	font-family: Lora, Georgia, Serif;
+	font-weight: 700;
 	font-size: 23px;
 	text-align: left;
 	text-indent: -0.4em; /*Hangs quote*/
@@ -1038,6 +1042,7 @@ figcaption{
 
 .invention{
 	font-family: Lora, Georgia, Serif;
+	font-weight: 700;
 	font-size: 30px;
 }
 
