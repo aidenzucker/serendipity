@@ -571,6 +571,36 @@ border: 2px solid blue;
  }
 }
 
+.colophon{
+	padding-top: 80px;
+	text-align: left;
+	line-height: 18px;
+	/*padding-left: 100px;*/
+	max-width: 454px;
+
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+
+.colophon h1{
+	text-align: left;
+	font-family: Montserrat, Helvetica, Sans-Serif;
+	font-weight: 700;
+}
+
+.colophon h4{
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+}
+
+/*Body copy for colophon*/
+h5{
+
+}
 
 /*////////////////////////////////////////
                   LEARN  
