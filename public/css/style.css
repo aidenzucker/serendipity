@@ -137,6 +137,50 @@ h2{
 	padding-bottom: 2px;
 }
 
+/*index-new css*/
+#menu-logo{
+	position: fixed;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 20px;
+
+	font-family: Lora, Georgia, Serif;
+	font-weight: 700;
+	color: #B3B3B3;
+	font-size: 30px;
+}
+
+#menu-learn{
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	font-size: 23px;
+}
+
+#menu-juxtagraph{
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	font-size: 23px;
+}
+
+#menu-share{
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	font-size: 23px;
+}
+
+#menu-about{
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	font-size: 23px;
+}
+
 
 
 /*/////////////////////////////
@@ -234,6 +278,47 @@ h2{
 /*///////////////////////////////////
                HOME
 ////////////////////////////////////*/
+
+
+.desktop-menu{
+	display: block;
+}
+
+.mobile-menu{
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	.desktop-menu{
+		display: none;
+	}
+
+	.mobile-menu{
+		display: block;
+	}
+}	
+
+
+.splash-title{
+	font-size: 3.8vw;
+
+	width: 100vw;
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+
+	max-width: 81vw;
+}
+
+@media screen and (max-width: 700px) {
+	.splash-title{
+		font-size: 7vw;
+		top: 42%;
+	}
+}	
 
 .centered-wrapper{
 	/*display: inline-block;*/
@@ -810,7 +895,7 @@ figcaption{
 	position: absolute;
 	margin-top: 10px;
 
-	top: 2px;
+	top: 21px;
 }
 
 .fuller img{
@@ -895,7 +980,7 @@ figcaption{
 	}
 
 	#pupil{
-		top: -100px;
+		top: -50px;
 
 	}
 
@@ -1222,6 +1307,24 @@ figcaption{
 	}
 
 }
+
+.juxtagraph-explanation{
+	padding-top: 32px;
+}
+
+.juxtagraph-explanation img{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+#blue-down-arrow{
+	width: 35px;
+	margin-bottom: 50px;
+}
+
 
 /*/////////////////////////////
           	CLOSEUP     

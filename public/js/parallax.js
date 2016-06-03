@@ -8,7 +8,7 @@
         woodenCurvesDistance = $(window).width() * .4,
         backgroundDistance = $(window).width() * .2,
 
-        pupilDistance = $(window).width() * .3, //this might not work bc not whole width
+        pupilDistance = $(window).width() * .2, //this might not work bc not whole width
 
         portraitDistance = $(window).width(),
         drawingDistance = $(window).width()
