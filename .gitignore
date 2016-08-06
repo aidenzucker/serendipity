@@ -1,4 +1,4 @@
 
 node_modules/*
-gallery/*
 db.json
+*.swp

@@ -90,7 +90,7 @@ app.get("/count", function (req, res) {
 
 app.get("/images/:id", function (req, res) {
     var id = parseInt(req.params.id);
-    if (id < 0 || id > maxImgIndex || id == null) {
+    if (isNumInvalid(id)) {
         res.status(404).send('Invalid ID');
         return;
     }
@@ -101,7 +101,7 @@ app.get("/images/:id", function (req, res) {
 
 app.get("/information/:id", function (req, res) {
     var id = parseInt(req.params.id);
-    if (id < 0 || id > maxImgIndex || id == null) {
+    if (isNumInvalid(id)) {
         res.status(404).send('Invalid ID');
         return;
     }
@@ -116,12 +116,12 @@ app.get("/information/:id", function (req, res) {
 
 app.get("/detail/:id", function (req, res) {
     var id = parseInt(req.params.id);
-    if (id < 0 || id > maxImgIndex || id == null) {
+    if (isNumInvalid(id)) {
         res.status(404).send('Invalid ID');
         return;
     }
 
-    db.find({ "imgIndex": parseInt(id) }, function(err, entry) {
+    db.find({ "imgIndex": id }, function(err, entry) {
         if (err) {
             console.log("DB Find error: " + err);
         } else {
@@ -168,3 +168,6 @@ function parseDataURL(body) {
     };
 }
 
+function isNumInvalid(id) {
+    return id === null || isNaN(id) || id < 0 || id > maxImgIndex;
+}
